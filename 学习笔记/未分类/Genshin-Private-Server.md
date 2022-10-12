@@ -76,7 +76,8 @@ cd Grasscutter
 
 ## 服务端资源
 
-为方便后续操作及资源更新，将该`.jar`文件放到另一个目录中，在`jar`文件根目录中创建`resources`文件夹，并将[Resources](https://github.com/Koko-boya/Grasscutter_Resources)里的资源放到`resources`文件夹中。  
+为方便后续操作及资源更新，将该`.jar`文件放到另一个目录中，在`jar`文件根目录中创建`resources`文件夹，并将[Resources](https://github.com/Koko-boya/Grasscutter_Resources)里的资源放到`resources`文件夹中。
+
 此外还需将[Keystore 文件](https://github.com/Grasscutters/Grasscutter/blob/development/keystore.p12)放到`jar`文件的根目录中。  
 
 ![Server](https://s1.imagehub.cc/images/2022/08/12/TRkTh24DZH.png "Server目录")
@@ -103,6 +104,7 @@ PS：关闭服务端不可直接关闭该`cmd`窗口，需在该窗口内输入`
 ## 本地客户端连接
 
 在运行客户端之前，首先需要将客户端请求代理至本地服务器 (同理可代理至运行服务端的云服务器)。  
+
 这里使用的是 mitmproxy 代理工具。  
 
 在`grasscutter`的项目目录内有`proxy.py`和`proxy_config.py`文件，将其复制到`jar`文件的根目录中。  
@@ -156,12 +158,15 @@ account create [username] [uid]
 
 1. 自行替换文件
 
-   国服点击[这里](https://github.com/577fkj/GenshinProxy/files/9107927/default.zip)下载`metadata-patch`文件。  
+   国服点击[这里](https://github.com/577fkj/GenshinProxy/files/9107927/default.zip)下载`metadata-patch`文件。 
+ 
    国际服请点击[这里](https://github.com/577fkj/GenshinProxy/files/9107929/default.zip)下载。  
    （链接不保证长期有效）  
 
    解压后将文件夹内的`global-metadata.dat`文件 与 原神游戏目录内的`/Metadata/global-metadata.dat`替换。  
+
    然后运行私服即可进行游玩。  
+
    关闭私服后请尽快将上述文件还原为官方提供的文件（即备份），以免因个人疏忽产生不良后果。  
 
 2. 使用[该启动器](https://github.com/gc-toolkit/OceanLauncher)解决。
@@ -171,8 +176,11 @@ account create [username] [uid]
    ![OL](https://s1.imagehub.cc/images/2022/08/12/OceanLauncher_uTmr7kLBOB.png)
 
    在设置里填入游戏路径后，往下拉点击`Patch`选项，即可打上 2.8 客户端补丁（用来连接私服的）。  
+
    换回官方提供的文件只需点击`Unpatch`即可。  
-   打完补丁后不用在启动器运行游戏，关闭启动器自己运行私服即可。  
+
+   打完补丁后不用在启动器运行游戏，关闭启动器自己运行私服即可。 
+ 
    关闭私服后请尽快打开启动器设置并`Unpatch`（如出现问题请将备份进行复制替换），以免因个人疏忽产生不良后果。  
 
 </details>
@@ -188,6 +196,7 @@ account create [username] [uid]
 游戏内需要使用指令来获取各种物品，打开聊天框并添加会话对象`Server`，即可进入控制台（没错，唯一的聊天对象就是游戏内控制台）。  
 
 如不出意外，在`jar`文件根目录下已经有各种语言的`Handbook`（即指令手册）了，自己找到简中或繁中的查看即可。  
+
 在游戏内向控制台发送指令需加上前缀`!`或`/`，否则无效。  
 
 ![Handbook](https://s1.imagehub.cc/images/2022/08/12/qS1s24V2zl.png)
@@ -497,6 +506,7 @@ account create [username] [uid]
 ```
 
 新增卡池的话，只需增加`gachaType`为非文件中的值，且`scheduleId`的值不重复即可。注意客户端只识别以上四个`gachaType`值，添加的其他卡池不会显示类型。  
+
 要修改卡池图片和标题的话，可以到[荼蘼云盘](https://pan.tomys.top/s/dkZCZ?password=blnuot)里找到`原神卡池顺序_V<version>_byTomyJan.xlsx`下载查看。随后修改对应参数项的值中的`A0**`为你想要的卡池ID。  
 
 下面是全物品卡池的参数：  
