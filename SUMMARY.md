@@ -1,17 +1,4 @@
-# README
-
-## Mumei no Oka
-
-[![Author](https://img.shields.io/badge/author-Velpro514-blue?style=plastic&logo=github)](https://anvelpro.xyz) [![Email](https://img.shields.io/badge/Email-velpro88514%40gmail.com-brightgreen?style=plastic&logo=gmail)](mailto:velpro88514@gmail.com)
-
-「尝有所思，斯世如磐；孰料浮世事，留驻难。」
-
-「常磐なす かくしもがもと 思へども 世の事なれば 留みかねつも」
-
-| 目录 | 描述 |
-| :--- | :--- |
-| 须臾 | 日常博文，记录自己生活中的那点事 |
-| 学习笔记 | 各种各样的学习笔记，包括但不限于前端、后端、课程笔记 |
+# Table of contents
 
 - [README](README.md)
 - 须臾
