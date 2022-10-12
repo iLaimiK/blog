@@ -213,204 +213,204 @@ $ rustup toolchain list | grep nightly | grep -vE "nightly-x86" | sed 's/-x86.*/
 $ ffmpeg -loglevel panic -i /dev/video0 -frames 1 -f image2 - | convert - -colorspace gray - | gzip | ssh servername 'gzip -d | tee copy.jpg' | feh -
 ```
 
-# 课后练习
+## 课后练习
 
 1. 学习一下这篇简短的[交互式正则表达式教程](https://imageslr.github.io/regexone-cn/)。  
 
-原网站是全英文教程，不过都很简短明晰。不过不知道为什么不能交互了，所以我将网址换成了它的汉化版。  
-网站上的教程做完基本能熟悉正则表达式的基本用法。下面我放一下自己的答案（答案不止一种）：  
+   原网站是全英文教程，不过都很简短明晰。不过不知道为什么不能交互了，所以我将网址换成了它的汉化版。  
+   网站上的教程做完基本能熟悉正则表达式的基本用法。下面我放一下自己的答案（答案不止一种）：  
 
-```bash
-# 课程
-1. [a-c]+
-2. \d\d\d
-3. ^.*\.
-4. ^[cmf]+[an]+$
-5. ^[^b]og$
-6. ^[^a-z]\w*$
-7. ^waz{2,}up$
-8. a+b*c+
-9. ^\d+ files? found\?$
-10. ^\d.\s+.*$
-11. ^\w+\:\s?successful$
-12. ^(.*)\.pdf$
-13. ^(.*\s+(\d+))$
-14. (\d{3,4})x(\d{3,4})
-15. ^.*(cats|dogs)$
-16. .*
+   ```bash
+   # 课程
+   1. [a-c]+
+   2. \d\d\d
+   3. ^.*\.
+   4. ^[cmf]+[an]+$
+   5. ^[^b]og$
+   6. ^[^a-z]\w*$
+   7. ^waz{2,}up$
+   8. a+b*c+
+   9. ^\d+ files? found\?$
+   10. ^\d.\s+.*$
+   11. ^\w+\:\s?successful$
+   12. ^(.*)\.pdf$
+   13. ^(.*\s+(\d+))$
+   14. (\d{3,4})x(\d{3,4})
+   15. ^.*(cats|dogs)$
+   16. .*
 
-# 问题
-1. ^-?\d+(,\d+)*(\.\d+)?(e\d+)?$
-2. 1?\s*-?\(?(\d{3})\)?\s*-?\d{3}\s*-?\d{4}
-3. ^([\w\.]*)
-4. ^\<(\w+)
-5. ^(\w+)\.(jpg|png|gif)$
-6. ^\s+(.*)\s*$
-7. (\w+)\((.+):(\d+)\)
-8. ^(\w+)://([^/:]+)(:(\d+))?
+   # 问题
+   1. ^-?\d+(,\d+)*(\.\d+)?(e\d+)?$
+   2. 1?\s*-?\(?(\d{3})\)?\s*-?\d{3}\s*-?\d{4}
+   3. ^([\w\.]*)
+   4. ^\<(\w+)
+   5. ^(\w+)\.(jpg|png|gif)$
+   6. ^\s+(.*)\s*$
+   7. (\w+)\((.+):(\d+)\)
+   8. ^(\w+)://([^/:]+)(:(\d+))?
 
-# 进阶课程
-1. ((\w+) \2)
-2-1. \w+(?=ly)
-2-2. (?<=un)\w+
-2-3. re(?!g)
-2-4. (?<!un)happy
-3. .*(?:cats|dogs)
-4. (\d+?)0*$
-```
+   # 进阶课程
+   1. ((\w+) \2)
+   2-1. \w+(?=ly)
+   2-2. (?<=un)\w+
+   2-3. re(?!g)
+   2-4. (?<!un)happy
+   3. .*(?:cats|dogs)
+   4. (\d+?)0*$
+   ```
 
-更多资源：[在线学正则表达式](https://zhuanlan.zhihu.com/p/447336932)
+   更多资源：[在线学正则表达式](https://zhuanlan.zhihu.com/p/447336932)
 
 2. 统计words文件 (`/usr/share/dict/words`) 中包含至少三个`a`且不以`'s`结尾的单词个数。这些单词中，出现频率前三的末尾两个字母是什么？ `sed`的`y`命令，或者 `tr` 程序也许可以帮你解决大小写的问题。共存在多少种词尾两字母组合？还有一个很有挑战性的问题：哪个组合从未出现过？  
 
-[Linux sed 命令详解](http://t.zoukankan.com/baichunyu-p-15227423.html)  
-[Linux tr 命令详解](https://www.cnblogs.com/ftl1012/p/tr.html)  
+   [Linux sed 命令详解](http://t.zoukankan.com/baichunyu-p-15227423.html)  
+   [Linux tr 命令详解](https://www.cnblogs.com/ftl1012/p/tr.html)  
 
-统计个数：
+   统计个数：
 
-```bash
-$ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$"| wc -l
-```
+   ```bash
+   $ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$"| wc -l
+   ```
 
-在上面的单词中统计出现频率前三的末尾两个字母：
+   在上面的单词中统计出现频率前三的末尾两个字母：
 
-```bash
-$ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq -c | sort | tail -n3
-```
+   ```bash
+   $ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq -c | sort | tail -n3
+   ```
 
-词尾两字母组合种类数量：
+   词尾两字母组合种类数量：
 
-```bash
-$ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq | wc -l
-```
+   ```bash
+   $ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E    "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq | wc -l
+   ```
 
-未出现过的组合：
+   未出现过的组合：
 
-```bash
-# 枚举所有组合
-#!/bin/bash
+   ```bash
+   # 枚举所有组合
+   #!/bin/bash
 
-for i in {a..z};
-do for j in {a..z};
-  do echo ${i}${j}
-  done
-done
-```
+   for i in {a..z};
+   do for j in {a..z};
+     do echo ${i}${j}
+     done
+   done
+   ```
 
-```bash occur.sh
-$ ./all.sh > all.txt
-$ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq | sort > occur.txt
-$ diff --unchanged-group-format='' <(cat occur.txt) <(cat all.txt) | wc -l
-```
+   ```bash occur.sh
+   $ ./all.sh > all.txt
+   $ cat /usr/share/dict/words | tr "[:upper:]" "[:lower:]" | grep -E    "^(.*a){3}.*[^'s]$" | sed -E "s/.*([a-z]{2})$/\1/" | sort | uniq |    sort > occur.txt
+   $ diff --unchanged-group-format='' <(cat occur.txt) <(cat all.   txt) | wc -l
+   ```
 
 3. 进行原地替换听上去很有诱惑力，例如： `sed s/REGEX/SUBSTITUTION/ input.txt > input.txt`。但是这并不是一个明智的做法，为什么呢？还是说只有 sed是这样的? 查看 `man sed` 来完成这个问题  
 
-不能使用`sed s/REGEX/SUBSTITUTION/ input.txt > input.txt`的操作，因为会先执行`> input.txt`将后者清空。所以前面一个`input.txt`在还没有被 `sed` 处理时已经为空了。在使用正则处理文件前最好是首先备份文件。  
+   不能使用`sed s/REGEX/SUBSTITUTION/ input.txt > input.txt`的操作，因为会先执行`> input.txt`将后者清空。所以前面一个`input.txt`在还没有被 `sed` 处理时已经为空了。在使用正则处理文件前最好是首先备份文件。  
 
-```bash
-sed -i.bak s/REGEX/SUBSTITUTION/ input.txt > input.txt
-```
+   ```bash
+   sed -i.bak s/REGEX/SUBSTITUTION/ input.txt > input.txt
+   ```
 
-上面的命令会自动创建一个后缀为 `.bak` 的备份文件。  
+   上面的命令会自动创建一个后缀为 `.bak` 的备份文件。  
 
 4. 找出您最近十次开机的开机时间平均数、中位数和最长时间。在Linux上需要用到 `journalctl` 。找到每次起到开始和结束时的时间戳。在Linux上类似这样操作：  
 
-```bash
-Logs begin at ...
-```
+   ```bash
+   Logs begin at ...
+   ```
 
-和
+   和
 
-```bash
-systemd[577]: Startup finished in ...
-```
+   ```bash
+   systemd[577]: Startup finished in ...
+   ```
 
-`journalctl` 默认只会保存最近一次启动的日志。我们需要修改设置来允许 `journalctl` 记录多次开机的日志。
+   `journalctl` 默认只会保存最近一次启动的日志。我们需要修改设置来允许    `journalctl` 记录多次开机的日志。
 
-```bash
-$ sudo vi /etc/systemd/journald.conf
-```
+   ```bash
+   $ sudo vi /etc/systemd/journald.conf
+   ```
 
-设置`Storage=persistent`：  
+   设置`Storage=persistent`：  
 
-![journald.conf](https://www.z4a.net/images/2022/08/11/JcsyeCcf0p.png)  
+   ![journald.conf](https://www.z4a.net/images/2022/08/11/JcsyeCcf0p.png)  
 
-然后手动重启多次系统，收集数据：  
+   然后手动重启多次系统，收集数据：  
 
-![重启](https://www.z4a.net/images/2022/08/11/nQfzdQmLVO.png)
+   ![重启](https://www.z4a.net/images/2022/08/11/nQfzdQmLVO.png)
 
-使用 `journalctl` 和 `grep` 筛选出系统启动数据：  
+   使用 `journalctl` 和 `grep` 筛选出系统启动数据：  
 
-![日志筛选](https://www.z4a.net/images/2022/08/11/Fg6mkHNY1h.png)
+   ![日志筛选](https://www.z4a.net/images/2022/08/11/Fg6mkHNY1h.png)
 
-观察发现带有`kernel`即`内核`的条目即为系统的真正启动时间，进一步筛选：  
+   观察发现带有`kernel`即`内核`的条目即为系统的真正启动时间，进一步筛选：  
 
-![启动时间](https://www.z4a.net/images/2022/08/11/gMr9ikssFQ.png)
+   ![启动时间](https://www.z4a.net/images/2022/08/11/gMr9ikssFQ.png)
 
-编写脚本`getlog.sh`来获取最近十次的启动时间数据：  
+   编写脚本`getlog.sh`来获取最近十次的启动时间数据：  
 
-```bash
-#!/bin/bash
+   ```bash
+   #!/bin/bash
 
-for i in {0..9}; do
-    journalctl -b-$i | grep "Startup finished in"
-done
-```
+   for i in {0..9}; do
+       journalctl -b-$i | grep "Startup finished in"
+   done
+   ```
 
-```bash
-$ ./getlog.sh > starttime.txt
-```
+   ```bash
+   $ ./getlog.sh > starttime.txt
+   ```
 
-`sed`的正则有许多语法都不支持，因此这里只用最基本的语法。  
+   `sed`的正则有许多语法都不支持，因此这里只用最基本的语法。  
 
-```bash
-#获取最长时间
-$ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort | tail -n1
+   ```bash
+   #获取最长时间
+   $ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort | tail -n1
 
-#获取最短时间
-$ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort -r | tail -n1
+   #获取最短时间
+   $ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort -r | tail -n1
 
-#平均数（注意 awk 要使用单引号）
-$ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | paste -sd+ | bc -l | awk '{print $1/10}'
+   #平均数（注意 awk 要使用单引号）
+   $ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | paste -sd+ | bc -l | awk '{print $1/10}'
 
-# 中位数
-$ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort | paste -sd\ | awk '{print ($5+$6)/2}'
-```
+   # 中位数
+   $ cat starttime.txt | grep "systemd\[1\]" | sed -E "s/.*=\ (.*)s\.$/\1/" | sort | paste -sd\ | awk '{print ($5+$6)/2}'
+   ```
 
 5. 查看之前三次重启启动信息中不同的部分(参见`journalctl`的`-b`选项)。将这一任务分为几个步骤，首先获取之前三次启动的启动日志，也许获取启动日志的命令就有合适的选项可以帮助您提取前三次启动的日志，亦或者您可以使用`sed '0,/STRING/d'` 来删除`STRING`匹配到的字符串前面的全部内容。然后，过滤掉每次都不相同的部分，例如时间戳。下一步，重复记录输入行并对其计数(可以使用`uniq`)。最后，删除所有出现过3次的内容（因为这些内容是三次启动日志中的重复部分）。  
 
-将上面的`getlog.sh`简单修改为：  
+      将上面的`getlog.sh`简单修改为：  
 
-```bash
-#!/bin/bash
+      ```bash
+      #!/bin/bash
 
-for i in {0..2}; do #获取最近三次的启动日志
-    journalctl -b-$i | sed '0,/Startup finished/d'
-done
-```
+      for i in {0..2}; do #获取最近三次的启动日志
+          journalctl -b-$i | sed '0,/Startup finished/d'
+      done
+      ```
 
-然后输入下列命令：  
+      然后输入下列命令：  
 
-```bash
-$ ./getlog.sh > last3time.txt
-```
+      ```bash
+      $ ./getlog.sh > last3time.txt
+      ```
 
-去除开头的时间戳：  
+      去除开头的时间戳：  
 
-```bash
-$ cat last3time.txt | sed -E "s/.*al\ (.*)/\1/" | head -n10
-```
+      ```bash
+      $ cat last3time.txt | sed -E "s/.*al\ (.*)/\1/" | head -n10
+      ```
 
-重复记录输入行并对其计数，并删除所有出现过3次的内容：  
+      重复记录输入行并对其计数，并删除所有出现过3次的内容：  
 
-```bash
-#注意 uniq 只能过滤相邻的行，所以必须先排序
-$ cat last3time.txt | sed -E "s/.*al\ (.*)/\1/" | sort | uniq -c | sort | awk '$1!=3 { print }'
-```
+      ```bash
+      #注意 uniq 只能过滤相邻的行，所以必须先排序
+      $ cat last3time.txt | sed -E "s/.*al\ (.*)/\1/" | sort | uniq -c |       sort | awk '$1!=3 { print }'
+      ```
 
 6. 在网上找一个类似[这个](https://stats.wikimedia.org/EN/TablesWikipediaZZ.htm)或者[这个](https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/topic-pages/tables/table-1)的数据集。或者从[这里](https://www.springboard.com/blog/data-science/free-public-data-sets-data-science-project/)找一些。使用 `curl` 获取数据集并提取其中两列数据，如果您想要获取的是HTML数据，那么`pup`可能会更有帮助。对于JSON类型的数据，可以试试`jq`。请使用一条指令来找出其中一列的最大值和最小值，用另外一条指令计算两列之间差的总和。
 
-emmmmmm，我看了看两个数据集，内容都还挺多的，第三个网站是自己去里面列出的网址找数据集。  
-`curl`命令会遍历整个html文件并下载，使用`grep`和`sed`命令筛选将会得到一长串包含正则表达式的命令。题目中提到的工具确实能使数据筛选更高效快速。
-题目中说的一条指令，可以包含长串的函数，那样来说确实是一条，但是不够美观。
-因本人懒，且虚拟机无法连接上以上网站，所以这里不作解答。  
+   emmmmmm，我看了看两个数据集，内容都还挺多的，第三个网站是自己去里面列出的网址找数据集。  
+   `curl`命令会遍历整个html文件并下载，使用`grep`和`sed`命令筛选将会得到一长串包含正则表达式的命令。题目中提到的工具确实能使数据筛选更高效快速。  
+   题目中说的一条指令，可以包含长串的函数，那样来说确实是一条，但是不够美观。  
+   因本人懒，且虚拟机无法连接上以上网站，所以这里不作解答。  

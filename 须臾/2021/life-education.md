@@ -22,9 +22,9 @@ categories:
 
 愿每个人都有一个自己满意的人生！  
 
-# 生命教育相关资料
+## 生命教育相关资料
 
-## 资源
+### 资源
 
 书籍《自杀论》：[ここにクリックしてください](https://pan.baidu.com/s/1RecYye8nzXydGZt7NWkf6Q)  
 > 提取码：iiwv
@@ -35,7 +35,7 @@ categories:
 香港生命教育课程的框架（论文）：[点击这里](https://pan.baidu.com/s/1pNYIuRp1SHAcdF3aG2q6dg)  
 > 提取码：ep2q
 
-## 可参考
+### 可参考
 
 [生命教育-澳大利亚](https://www.lifeeducation.org.au/about-us)  
 [生命教育-香港教育局](https://www.edb.gov.hk/sc/teacher/prevention-of-student-suicides/secondary/index.html)  
@@ -50,12 +50,12 @@ categories:
 [生命教育的三个维度](https://zhuanlan.zhihu.com/p/370340272)  
 [聊一聊被遗忘的生命教育](https://zhuanlan.zhihu.com/p/294899893)  
 
-# 难以承受之痛——向折翼的天使们致敬
+## 难以承受之痛——向折翼的天使们致敬
 
 > 这里只收集知乎上有具体日期的相关提问，时间信息不全的已补全。  
 > 始于2020年8月，止于2021年4月。  
 
-## 永远留在了2020年秋冬-2021年春的同学
+### 永远留在了2020年秋冬-2021年春的同学
 
 **愿逝者安息**  
 **Rest In Peace**  

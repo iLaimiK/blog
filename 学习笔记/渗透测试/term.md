@@ -12,6 +12,7 @@ categories:
 ### html（css，js，html）
 
 ### HTTP协议
+
   超文本传输协议
   （HTTP，HyperText Transfer Protocol）是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。  
 
@@ -50,13 +51,13 @@ categories:
 ### 静态网站
 
 静态网站是指全部由HTML（标准通用标记语言的子集）代码格式页面组成的网站，所有的内容包含在网页文件中。网页上也可以出现各种视觉动态效果，如：GIF动画、Flash动画、滚动字幕等，而网站主要是静态化的页面和代码组成，一般文件名均以htm、html、shtml等为后缀。  
-如：http://www.xxx.com/index.html
+如：<http://www.xxx.com/index.html>
 
 ### 动态网站
 
 动态网站并不是指具有动画功能的网站，而是指网站内容可根据不同情况动态变更的网站，一般情况下，动态微网站通过数据库进行架构。  
 动态网站除了要设计网页外，还要通过数据库和编程序来使网站具有更多自动的和高级的功能。动态网站体现在网页一般是以asp，jsp，php，aspx等结尾，而静态网页一般是HTML结尾，动态网站服务器空间配置要比静态的网页要求高，费用也相应的高，不过动态网页利于网站内容的更新，适合企业建站。动态网站是相对于静态网站而言。  
-如：http://xxx.com.cn/index.asp  
+如：<http://xxx.com.cn/index.asp>  
 
 判断一个网站是什么编程语言写的，网站地址末尾加上index.asp/jsp/php/html等，也可加上robots.txt，有的是没有的，防止机器爬虫  
 判断Linux系统还是Windows系统，把网页地址中的文件后缀其中一个字母改为大写，如不报错，即为Windows。（Linux系统大小写敏感，Windows系统不敏感）  

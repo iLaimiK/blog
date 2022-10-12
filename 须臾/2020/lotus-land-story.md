@@ -10,7 +10,7 @@ catefories:
 cover: https://s1.imagehub.cc/images/2021/04/26/679939_p0.jpg
 ---
 
-# 无名之丘
+## 无名之丘
 
 <font color="#dd0000">梅蒂欣·梅兰可莉</font>负责编写本文内容，不定时更新。如有不正经之处，你来打我啊！～  
 
@@ -18,7 +18,7 @@ cover: https://s1.imagehub.cc/images/2021/04/26/679939_p0.jpg
 <summary>七绝•梅蒂欣•梅兰可莉</summary>
 文/夢月逸轩<br />
 暗香藏蕴舞悠扬，怅惘孤独月夜凉。<br />  
-抵死伶俜贪怨泣，时闲寂寞况忧伤。<br /> 
+抵死伶俜贪怨泣，时闲寂寞况忧伤。<br />
 </details>
 
 <font color="#dd0000"><i>Nov.17th 2020 - 3:30a.m.</i></font><br />

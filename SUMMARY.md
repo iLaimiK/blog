@@ -9,7 +9,6 @@
     - [谈谈性教育那些事](须臾/2021/about-a-sex.md)
     - [缺位的生命教育](须臾/2021/life-education.md)
     - [翻译那些事](须臾/2021/intertranslation.md)
-    - [学习日语那些事](须臾/2021/japanese-relate.md)
   - 2022
     - [大学](须臾/2022/college-education.md)
 - 学习笔记

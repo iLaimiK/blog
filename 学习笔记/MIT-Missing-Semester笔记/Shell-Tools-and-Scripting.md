@@ -9,10 +9,10 @@ tags:
 - 学习笔记
 ---
 
-官方文档: https://missing.csail.mit.edu/  
-官方文档中文翻译: https://missing-semester-cn.github.io/  
+官方文档: <https://missing.csail.mit.edu/>  
+官方文档中文翻译: <https://missing-semester-cn.github.io/>  
 
-# Shell 脚本
+## Shell 脚本
 
 > 本节中，我们会专注于 bash 脚本，因为它最流行，应用更为广泛。
 
@@ -29,7 +29,9 @@ $ foo=bar
 $ echo "$foo"   #打印 bar
 $ echo '$foo'   #打印 $foo
 ```
+
 和其他大多数的编程语言一样，Bash 也支持`if`，`case`，`while`和`for`这些控制流关键字。同样地， Bash 也支持函数，它可以接受参数并基于参数进行操作。  
+
 以下是一个简单的函数定义，该函数位于`mcd.sh`文件中：  
 
 ```bash
@@ -135,7 +137,7 @@ Running program ./example.sh with 2 args with pid 11920
 File test2.sh does not have any foobar, adding one
 ```
 
-## 通配
+### 通配
 
 当执行脚本时，我们经常需要提供形式类似的参数。Bash使我们可以轻松的实现这一操作，它可以基于文件扩展名展开表达式。这一技术被称为shell的**通配（globbing）**  
 
@@ -169,7 +171,7 @@ diff <(ls foo) <(ls bar)
 # > y
 ```
 
-## 使用环境变量来解析脚本
+### 使用环境变量来解析脚本
 
 脚本的第一行通常是指定解释器，即这个脚本必须通过什么解释器执行。这一行以`#!`字符开头，这个字符称为 Shebang，所以这一行就叫做 Shebang 行。  
 
@@ -189,7 +191,7 @@ for arg in reversed(sys.argv[1:]):
 ```
 
 > `env`命令总是指向`/usr/bin/env`文件，或者说，这个二进制文件总是在目录`/usr/bin`。
-
+>
 > `#!/usr/bin/env NAME`这个语法的意思是，让 Shell 查找`$PATH`环境变量里面第一个匹配的`NAME`。如果你不知道某个命令的具体路径，或者希望兼容其他用户的机器，这样的写法就很有用。
 
 <details>
@@ -201,12 +203,13 @@ for arg in reversed(sys.argv[1:]):
 
 3. 函数会在当前的shell环境中执行，脚本会在单独的进程中执行。因此，函数可以对环境变量进行更改，比如改变当前工作目录，脚本则不行。脚本需要使用 `export`将环境变量导出，并将值传递给环境变量。<br />
 
-4. 与其他程序语言一样，函数可以提高代码模块性、代码复用性并创建清晰性的结构。shell脚本中往往也会包含它们自己的函数定义。<br />
+4. 与其他程序语言一样，函数可以提高代码模块性、代码复用性并创建清晰性的结构。shell脚本中往往也会包含它们自己的函数定义。
+
 </details>
 
-# Shell 工具
+## Shell 工具
 
-## find 指令
+### find 指令
 
 ```bash
 # . 表示当前目录
@@ -228,7 +231,7 @@ find . -name '*.tmp' -exec rm {} \;
 
 [find 命令的 7 种用法](https://blog.csdn.net/weixin_44767040/article/details/124735740)  
 
-## grep 命令
+### grep 命令
 
 在文件中搜索：  
 
@@ -252,7 +255,7 @@ $ grep -R foobar .
 
 课程中介绍到了ripgrep（rg）命令，但这是非内置命令，并不具有通用性，故不作记录。需要了解的请自行在网络上搜索。  
 
-## history 命令
+### history 命令
 
 `history`命令允许您以程序员的方式来访问 Shell 中输入的历史命令。这个命令会在 STDOUT 中打印 Shell 中的里面命令。如果我们要搜索历史记录，则可以利用管道将输出结果传递给`grep`进行模式搜索。 `history | grep find`会打印包含find子串的命令。  
 
@@ -277,104 +280,103 @@ $ cat example.sh | fzf
 安装的时候可以选择绑定到 ctrl + R 指令，从而在历史搜索时启用 fzf
 </details>
 
-
-# 课后习题
+## 课后习题
 
 1. 阅读 man ls ，然后使用ls 命令进行如下操作：
 
-  * 所有文件（包括隐藏文件）
-  * 文件打印以人类可以理解的格式输出 (例如，使用454M 而不是 454279954)
-  * 文件以最近访问顺序排序
-  * 以彩色文本显示输出结果
+   * 所有文件（包括隐藏文件）
+   * 文件打印以人类可以理解的格式输出 (例如，使用454M 而不是 454279954)
+   * 文件以最近访问顺序排序
+   * 以彩色文本显示输出结果
 
-```bash
-$ man ls
-$ ls -a
-$ ls -h
-$ ls --color=auto
-$ ls -alhS --color=auto
-```
+   ```bash
+   $ man ls
+   $ ls -a
+   $ ls -h
+   $ ls --color=auto
+   $ ls -alhS --color=auto
+   ```
 
-[ls命令常见使用方法](https://blog.csdn.net/Mr_Sudo/article/details/124761409)
+   [ls命令常见使用方法](https://blog.csdn.net/Mr_Sudo/article/details/124761409)
 
 2. 编写两个bash函数`marco`和`polo`执行下面的操作。 每当你执行`marco`时，当前的工作目录应当以某种形式保存，当执行`polo`时，无论现在处在什么目录下，都应当`cd`回到当时执行`marco`的目录。 为了方便debug，你可以把代码写在单独的文件`marco.sh`中，并通过`source marco.sh`命令，（重新）加载函数。
 
-```bash
-#!/bin/bash
+   ```bash
+   #!/bin/bash
+   
+   marco(){
+       echo "$(pwd)" > $HOME/marco_pwd.log
+       echo "save pwd $(pwd)"
+   }
 
-marco(){
-    echo "$(pwd)" > $HOME/marco_pwd.log
-    echo "save pwd $(pwd)"
-}
+   polp(){
+       cd "$(cat "$HOME/marco_pwd.log")"
+   }
+   ```
 
-polp(){
-    cd "$(cat "$HOME/marco_pwd.log")"
-}
-```
+   ```bash
+   $ vim marco.sh
+   $ source marco.sh
+   $ marco
+   save pwd /home/missing/shell_tools
+   ~/missing/shell_tools$ cd /
+   /$ polo
+   ~/missing/shell_tools$ 
+   ```
 
-```bash
-$ vim marco.sh
-$ source marco.sh
-$ marco
-save pwd /home/missing/shell_tools
-~/missing/shell_tools$ cd /
-/$ polo
-~/missing/shell_tools$ 
-```
- 
 3. 假设您有一个命令，它很少出错。因此为了在出错时能够对其进行调试，需要花费大量的时间重现错误并捕获输出。 编写一段bash脚本，运行如下的脚本直到它出错，将它的标准输出和标准错误流记录到文件，并在最后输出所有内容。 加分项：报告脚本在失败前共运行了多少次。
 
-```bash
- #!/usr/bin/env bash
+   ```bash
+    #!/usr/bin/env bash
 
- n=$(( RANDOM % 100 ))
+    n=$(( RANDOM % 100 ))
 
- if [[ n -eq 42 ]]; then
-    echo "Something went wrong"
-    >&2 echo "The error was using magic numbers"
-    exit 1
- fi
-
- echo "Everything went according to plan"
-```
-
-```bash
-#! usr/bin/env bash
-
-count=1
-
-while true
-do
-    ./buggy.sh > stdout.log 2> stderr.log
-    if [[ $? -ne 0 ]]; then
-        echo "failed after $count times"
-        cat stderr.log
-        break
+    if [[ n -eq 42 ]]; then
+       echo "Something went wrong"
+       >&2 echo "The error was using magic numbers"
+       exit 1
     fi
-    ((count++))
-done
-```
 
-4. 本节课我们讲解的`find`命令中的`-exec`参数非常强大，它可以对我们查找的文件进行操作。但是，如果我们要对所有文件进行操作呢？例如创建一个zip压缩文件？我们已经知道，命令行可以从参数或标准输入接受输入。在用管道连接命令时，我们将标准输出和标准输入连接起来，但是有些命令，例如`tar`则需要从参数接受输入。这里我们可以使用`xargs`命令，它可以使用标准输入中的内容作为参数。 例如`ls | xargs rm`会删除当前目录中的所有文件。
+    echo "Everything went according to plan"
+   ```
 
-您的任务是编写一个命令，它可以递归地查找文件夹中所有的 HTML 文件，并将它们压缩成zip文件。注意，即使文件名中包含空格，您的命令也应该能够正确执行（提示：查看`xargs`的参数`-d`）
+   ```bash
+   #! usr/bin/env bash
 
-```bash
-$ mkdir html_folder
-$ cd html_folder
-$ touch {1..10}.html
-$ mkdir html
-$ cd html
-$ touch test.html
-$ cd ..
-$ find . -type f -name "*.html" | xargs -d '\n' tar -cvzf html.zip
-```
+   count=1
 
-[xargs命令详解](https://www.cnblogs.com/lidabo/p/15662869.html)
-[tar命令常用方法](https://blog.csdn.net/bigdatafreedom/article/details/121300876)
+   while true
+   do
+       ./buggy.sh > stdout.log 2> stderr.log
+       if [[ $? -ne 0 ]]; then
+           echo "failed after $count times"
+           cat stderr.log
+           break
+       fi
+       ((count++))
+   done
+   ```
+
+4. 本节课我们讲解的`find`命令中的`-exec`参数非常强大，它可以对我们查找的文件进行操作。但是，如果我们要对所有文件进行操作呢？例如创建一个zip压缩文件？我们已经知道，命令行可以从参数或标准输入接受输入。在用管道连接命令时，我们将标准输出和标准输入连接起来，但是有些命令，例如`tar`则需要从参数接受输入。这里我们可以使用`xargs`命令，它可以使用标准输入中的内容作为参数。 例如`ls | xargs rm`会删除当前目录中的所有文件。  
+
+   您的任务是编写一个命令，它可以递归地查找文件夹中所有的 HTML 文件，并将它们压缩成zip文件。注意，即使文件名中包含空格，您的命令也应该能够正确执行（提示：查看`xargs`的参数`-d`）
+
+   ```bash
+   $ mkdir html_folder
+   $ cd html_folder
+   $ touch {1..10}.html
+   $ mkdir html
+   $ cd html
+   $ touch test.html
+   $ cd ..
+   $ find . -type f -name "*.html" | xargs -d '\n' tar -cvzf html.zip
+   ```
+
+   [xargs命令详解](https://www.cnblogs.com/lidabo/p/15662869.html)
+   [tar命令常用方法](https://blog.csdn.net/bigdatafreedom/article/details/121300876)
 
 5. （进阶）编写一个命令或脚本递归的查找文件夹中最近使用的文件。更通用的做法，你可以按照最近的使用时间列出文件吗？
 
-```bash
-find . -type f -mmin -60 -print0 | xargs -0 ls -lt | head -10
-```
+   ```bash
+   find . -type f -mmin -60 -print0 | xargs -0 ls -lt | head -10
+   ```

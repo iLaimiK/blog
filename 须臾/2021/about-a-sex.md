@@ -22,7 +22,7 @@ categories:
 
 《17.3 关于性》的推荐文：[17.3 about a sex](https://zhuanlan.zhihu.com/p/268897237)
 
-~~~
+~~~raw
 在线观看：https://ddrk.me/173-about-a-sex/
 百度网盘：https://pan.baidu.com/s/13kn_iUuxPzq5P-bHnz6FfQ
 提取码：958r
@@ -31,21 +31,21 @@ categories:
 
 [书籍《懒女孩的性指南》](https://book.douban.com/subject/1082397/)
 
-~~~
+~~~raw
 https://pan.baidu.com/s/1xlC1B2egj_oC4eAwx7UvzQ
 提取码：cmk1
 ~~~
 
 [书籍《男人这东西》](https://book.douban.com/subject/1035517/)
 
-~~~
+~~~raw
 https://pan.baidu.com/s/1iyT6kpDjDVfm6oMlgkzJUQ
 提取码：ktzj
 ~~~
 
 [书籍《房思琪的初恋乐园》](https://book.douban.com/subject/35063046/)
 
-~~~
+~~~raw
 https://pan.baidu.com/s/1aAnXj2-ZZrUgVyeg2QWkhA
 提取码：dkct
 ~~~
@@ -58,42 +58,42 @@ https://pan.baidu.com/s/1aAnXj2-ZZrUgVyeg2QWkhA
 
 [书籍《中国的男人和女人》](https://book.douban.com/subject/1004554/)
 
-~~~
+~~~raw
 https://pan.baidu.com/s/1VEkqNlnGAJRqoA3_sVxTCQ
 提取码：p4em
 ~~~
 
 [书籍《只有医生知道！》](https://book.douban.com/subject/20431965/)
 
-~~~
+~~~raw
 只有医生知道！（1+2+3+精华本）: https://pan.baidu.com/s/1_g0PZNA8zoGVtlApojYGkA
 提取码：40zw
 ~~~
 
 [书籍《性之变：21世纪中国人的性生活》](https://book.douban.com/subject/24845741/)
 
-~~~
+~~~raw
 https://pan.baidu.com/s/129N88mntpGlWMxArQg4f2A
 提取码：nakg
 ~~~
 
 [书籍《中国性科学百科全书》](https://book.douban.com/subject/1014451/)
 
-~~~
+~~~raw
 中国性科学百科全书（珍藏版）: https://pan.baidu.com/s/1XsEZWELPZ3uW7sFCSe0--Q
 提取码：0ssj
 ~~~
 
 [书籍《金赛性学报告》](https://book.douban.com/subject/24737829/)
 
-~~~
+~~~raw
 金赛性学报告（男人篇&女人篇）: https://pan.baidu.com/s/15_k8T_mIUkUcvLf7kMUGQA
 提取码：398l
 ~~~
 
 [书籍《海蒂性学报告》](https://book.douban.com/subject/1033273/)
 
-~~~
+~~~raw
 女人篇: https://pan.baidu.com/s/1oLI2o8vD00krSghfbPpAsA
 提取码：u13a
 
@@ -106,14 +106,14 @@ https://pan.baidu.com/s/129N88mntpGlWMxArQg4f2A
 
 [书籍《认识性学》](https://book.douban.com/subject/10867037/)
 
-~~~
+~~~raw
 认识性学（插图第6版）： https://pan.baidu.com/s/1pv_e6SGNw30uSQjRfrInCg
 提取码：6ag7
 ~~~
 
 [书籍《我们的性》](https://book.douban.com/subject/1233609/)
 
-~~~
+~~~raw
 我们的性（第七版）： https://pan.baidu.com/s/1JJdi9LUK_uUTvdjK6T5nBQ
 提取码：03gz
 ~~~

@@ -9,11 +9,11 @@ tags:
 - 学习笔记
 ---
 
-# 任务控制（Job Control）
+## 任务控制（Job Control）
 
 大多数情况下我们中断执行中的任务都是使用`Ctrl+c`来强制停止进程。这里我们研究一下它的工作原理。  
 
-## 结束进程
+### 结束进程
 
 > Shell 会使用 UNIX 提供的信号机制执行进程间通信。当一个进程接收到信号时，它会停止执行、处理该信号并基于信号传递的信息来改变其执行。就这一点而言，信号是一种*软件中断*。
 
@@ -77,7 +77,7 @@ I got a SIGINT, but I am not stopping
 无法捕获的信号有`SIGKILL`等，通常情况下，此种信号终止的进程可能会残留子进程，子进程在没有主进程的情况下可能会产生不可预料的行为。  
 尽管`SIGINT`和`SIGQUIT`都是常用的终止程序的终端请求，一个更常用的用来停止程序的信号是`SIGTERM`。我们需要使用[kill](https://www.man7.org/linux/man-pages/man1/kill.1.html)命令发送这个信号，语法是`kill -TERM <PID>`。  
 
-## 暂停和后台执行进程
+### 暂停和后台执行进程
 
 信号除了杀死进程之外还能做一些其他的事情。例如，`SIGSTOP`会让进程暂停。在终端中，键入`Ctrl+Z`会让 Shell 发送`SIGTSTP`信号，`SIGTSTP`是`Terminal Stop`的缩写（即terminal版本的`SIGSTOP`）。  
 
@@ -136,7 +136,7 @@ $ jobs
 $
 ```
 
-# 终端多路复用（Terminal Multiplexers）
+## 终端多路复用（Terminal Multiplexers）
 
 在使用终端的时候，你通常会同时执行多个任务。比如你想要同时编辑代码和运行程序。尽管打开一个新的终端窗口也能实现，但使用终端多路复用器是一个更好的解决方案。  
 
@@ -179,7 +179,7 @@ $
 [Tmux 使用教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)  
 [Linux命令之screen命令](https://blog.csdn.net/carefree2005/article/details/122415714)  
 
-## 别名
+### 别名
 
 有的时候输入比较长的命令比较麻烦，尤其是涉及多许多 flag 和选项的时候。出于简化的目的，大多数 Shell 都支持别名。Shell 中的别名相当于长命令的缩写形式，Shell 会自动将其替换成原本的命令。比如，bash中的别名语法如下：  
 
@@ -237,7 +237,7 @@ bash-5.0$ PS1="> "
 
 [Linux中如何使用alias命令](https://www.cnblogs.com/linuxprobe/p/15366863.html)
 
-# 配置文件（Dotfiles）
+## 配置文件（Dotfiles）
 
 很多程序的配置都是通过纯文本格式的被称作点文件（dotfiles）的配置文件来完成的（之所以称为点文件，是因为它们的文件名以`.`开头，例如`~/.vimrc`。也正因为此，它们默认是隐藏文件，单纯的`ls`并不会显示它们）。  
 
@@ -248,7 +248,7 @@ Shell 也是使用 点文件 进行配置的程序。在启动的时候，Shell 
 
 还有一些其他的工具也可以通过*dotfile*进行配置：  
 
-- bash - `~/.bashrc`,` ~/.bash_profile`  
+- bash - `~/.bashrc`, `~/.bash_profile`  
 - git - `~/.gitconfig`  
 - vim - `~/.vimrc` 和 `~/.vim` 目录  
 - ssh - `~/.ssh/config`  
@@ -267,7 +267,7 @@ dotfile 中需要放些什么？你可以通过在线文档和帮助手册（man
 
 本课程的老师们也在 GitHub 上开源了他们的配置文件：[Anish](https://github.com/anishathalye/dotfiles), [Jon](https://github.com/jonhoo/configs), [Jose](https://github.com/jjgo/dotfiles).  
 
-## 可移植性
+### 可移植性
 
 dotfile 的一个常见痛点是它并不能在不同的设备上生效，如你在不同设备上使用的操作系统或者 Shell 是不一样的，那配置文件是无法生效的。有的时候你可能也会想让特定的配置只在某些设备上生效。  
 
@@ -301,7 +301,7 @@ if [ -f ~/.aliases ]; then
 fi
 ```
 
-# 远端连接（Remote Machines）
+## 远端连接（Remote Machines）
 
 对于程序员来说，在他们的日常工作中使用远程服务器已经非常普遍了。如果需要使用远程服务器来部署后端程序或需要一个高性能计算的服务器，你就会用到 Secure Shell（SSH）。和其他工具一样，SSH 也是可以高度定制的，也值得我们花时间学习它。  
 
@@ -313,19 +313,19 @@ ssh foo@bar.mit.edu
 
 这里的`foo`是用户名，`bar.mit.edu`是服务器地址。服务器地址可以是域名也可以是 IP。之后我们将会看到进行 ssh 的配置之后，我们可以仅仅使用 `ssh bar` 来进行登录。  
 
-## 执行命令
+### 执行命令
 
 ssh 一个经常被忽略的功能是直接执行命令。  
 
 `ssh foobar@server ls`将会在`foobar`设备中home目录下执行`ls`命令。
 管道命令同样有效，所以`ssh foobar@server ls | grep PATTERN`将会本地`grep`远程命令`ls`获取的结果。`ls | ssh foobar@server grep PATTERN`将会在远端`grep`本地命令`ls`得到的结果。  
 
-## SSH Keys
+### SSH Keys
 
 基于 key 的验证机制使用了密码学中的公钥来向服务器证明用户持有对应的私钥，而不需要公开其私钥。  
 使用这种方法可以避免每次登录都输入密码。不过，私钥相当于你的密码，你需要保管好它。通常存放在`~/.ssh/id_rsa`或者`~/.ssh/id_ed25519`。  
 
-### Key 生成
+#### Key 生成
 
 使用 [ssh-keygen](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html) 命令可以生成公钥和私钥：  
 
@@ -337,7 +337,7 @@ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
 
 若你配置过 SSH Key 推送到 GitHub，那么你就已经完成了[这里](https://help.github.com/articles/connecting-to-github-with-ssh/)介绍的步骤，并且已经有了一对密钥。要检查你是否持有密码并验证它，你可以使用这个命令`ssh-keygen -y -f /path/to/key`。  
 
-### 基于 Key 的认证机制
+#### 基于 Key 的认证机制
 
 ssh 将会查找`.ssh/authorized_keys`来决定允许哪些用户访问。你可以使用命令将你的公钥拷贝到服务器上：  
 
@@ -351,7 +351,7 @@ cat .ssh/id_ed25519 | ssh foobar@remote 'cat >> ~/.ssh/authorized_keys'
 ssh-copy-id -i .ssh/id_ed25519.pub foobar@remote
 ```
 
-## 通过 SSH 复制文件
+### 通过 SSH 复制文件
 
 使用 ssh 复制文件有很多方法：  
 
@@ -359,24 +359,24 @@ ssh-copy-id -i .ssh/id_ed25519.pub foobar@remote
 - [scp](https://www.man7.org/linux/man-pages/man1/scp.1.html) ：当需要拷贝大量的文件或目录时，使用`scp`命令会更方便，因为它可以遍历相关路径。语法如下：`scp path/to/local_file remote_host:path/to/remote_file`；  
 - [rsync](https://www.man7.org/linux/man-pages/man1/rsync.1.html) 对 `scp` 进行了改进，它可以检测本地环境和远程服务器的文件以防止重复拷贝。它还可以提供一些诸如符号连接、权限管理等精心打磨的功能。甚至还可以基于 `--partial`标记实现断点续传。`rsync`的语法和`scp`类似；  
 
-## 端口转发（Port Forwarding）
+### 端口转发（Port Forwarding）
 
 在许多场景当中，你将会运行一些监听某些端口的程序。当你在本地运行的时候，你可以使用`localhost:PORT`或者`127.0.0.1:PORT`。但当你在服务器上运行时你该如何操作呢？服务器上的端口通常不会通过网络暴露给你。  
 
 此时就需要进行*端口转发*。端口转发有两种：本地端口转发和远程端口转发。（参见下图，该图片引用自[这篇 StackOverflow 文章](https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot)）  
 
-### 本地端口转发（Local Port Forwarding）
+#### 本地端口转发（Local Port Forwarding）
 
 ![local](https://i.stack.imgur.com/a28N8.png%C2%A0)
 
-### 远程端口转发（Remote Port Forwarding）
+#### 远程端口转发（Remote Port Forwarding）
 
 ![remote](https://i.stack.imgur.com/4iK3b.png%C2%A0)
 
 最常用的是本地端口转发，即远端服务器上的服务监听了一个端口，你希望将本地设备的一个端口和远程的端口连接起来。  
 举个例子，如果我们在远程服务器上的`8888`端口运行了一个`jupyter notebook`。然后我们建立本地`9999`端口的转发，使用`ssh -L 9999:localhost:8888 foobar@remote_server`。这样一来，我们只需要访问本地的`localhost:9999`端口即可。  
 
-## SSH 配置
+### SSH 配置
 
 我们已经介绍了许多参数，为了快捷，我们可以为它们创建别名，例如：  
 
@@ -405,13 +405,13 @@ Host *.mit.edu
 
 远程服务器端的配置文件一般位于 `/etc/ssh/sshd_config`，你可以在其中配置诸如 取消密码验证、修改 ssh 端口、开启 X11 转发 等等。你可以针对每一个用户进行单独设置。  
 
-## 杂项
+### 杂项
 
 远程连接服务器的其中一个常见痛点是，当网络环境发生变化、电脑关机/睡眠时会导致断开连接。并且如果连接的延迟很高也很让人绝望。[Mosh](https://mosh.org/)（mobile shell）对 ssh 进行了改进，允许连接漫游、间歇连接以及智能本地回显等等功能。  
 
 有时将远程的文件夹挂载到本地会比较方便，[sshfs](https://github.com/libfuse/sshfs)可以将远程服务器中的一个文件夹挂载到本地，这样你就可以使用本地编辑器进行访问了。  
 
-# Shell & 框架
+### Shell & 框架
 
 在 shell 工具和脚本那节课中我们已经介绍了 bash shell，因为它是目前最通用的 shell，大多数的系统都将其作为默认 shell。但是，它并不是唯一的选项。  
 
@@ -434,7 +434,7 @@ Host *.mit.edu
 
 需要注意的是，使用这些框架可能会降低 shell 的性能，尤其是如果这些框架的代码没有优化或者代码过多。你随时可以测试其性能或禁用某些不常用的功能来实现速度与功能的平衡。  
 
-# 终端模拟器（Terminal Emulators）
+## 终端模拟器（Terminal Emulators）
 
 和自定义 shell 一样，花点时间选择适合你的**终端模拟器**并进行设置是很有必要的。有许多终端模拟器可供你选择（[这里](https://anarc.at/blog/2018-04-12-terminal-emulators-1/)有一些关于它们之间比较的信息）  
 
@@ -447,67 +447,67 @@ Host *.mit.edu
 - 回退配置  
 - 性能（像 [Alacritty](https://github.com/jwilm/alacritty) 或者 [kitty](https://sw.kovidgoyal.net/kitty/) 这种比较新的终端，它们支持GPU加速）  
 
-# 课后练习
+## 课后练习
 
-## 任务控制
+### 任务控制
 
 1. 我们可以使用类似`ps aux | grep`这样的命令来获取任务的 pid ，然后您可以基于pid 来结束这些进程。但我们其实有更好的方法来做这件事。在终端中执行 `sleep 10000` 这个任务。然后用 `Ctrl+z` 将其切换到后台并使用 `bg` 来继续允许它。现在，使用 [pgrep](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 来查找 pid 并使用 [pkill](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 结束进程而不需要手动输入pid。(提示：: 使用 `-af` 标记)。
 
-![answer](https://s1.imagehub.cc/images/2022/10/08/kEKXarq814.png)
+   ![answer](https://s1.imagehub.cc/images/2022/10/08/kEKXarq814.png)
 
-PS: 这里虚拟机表示`-a`为无效选项，查看帮助后发现没有`-a`选项，所以只用了`-f`。
+   PS: 这里虚拟机表示`-a`为无效选项，查看帮助后发现没有`-a`选项，所以只用了`-f`。
 
-```bash
--a  Include process ancestors in the match list. By default, the current pgrep or pkill process and all of its ancestors are excluded (unless -v is used).
-包含匹配列表中的父进程。默认为目前执行 pgrep 或 pkill 命令的进程以及其所有父进程（除非使用了 -v）
+   ```bash
+   -a  Include process ancestors in the match list. By default, the current pgrep or pkill process and all of its ancestors are excluded (unless -v is used).
+   包含匹配列表中的父进程。默认为目前执行 pgrep 或 pkill 命令的进程以及其所有父进程（除非使用了 -v）
 
--f  Match against full argument lists. The default is to match against process names.
-匹配所有参数列表。默认只匹配进程名称。
-```
+   -f  Match against full argument lists. The default is to match against process names.
+   匹配所有参数列表。默认只匹配进程名称。
+   ```
 
 2. 如果您希望某个进程结束后再开始另外一个进程， 应该如何实现呢？在这个练习中，我们使用 `sleep 60 &` 作为先执行的程序。一种方法是使用 [wait](http://man7.org/linux/man-pages/man1/wait.1p.html) 命令。尝试启动这个休眠命令，然后待其结束后再执行 `ls` 命令。
 
-```bash
-sleep 60 &
-pgrep sleep | wait; ls
-```
+   ```bash
+   sleep 60 &
+   pgrep sleep | wait; ls
+   ```
 
-但是，如果我们在不同的 bash 会话中进行操作，则上述方法就不起作用了。因为 `wait` 只能对子进程起作用。之前我们没有提过的一个特性是，`kill` 命令成功退出时其状态码为 0 ，其他状态则是非0。`kill -0` 则不会发送信号，但是会在进程不存在时返回一个不为 0 的状态码。请编写一个 bash 函数 `pidwait` ，它接受一个 pid 作为输入参数，然后一直等待直到该进程结束。您需要使用 `sleep` 来避免浪费 CPU 性能。
+   但是，如果我们在不同的 bash 会话中进行操作，则上述方法就不起作用了。因为 `wait` 只能对子进程起作用。之前我们没有提过的一个特性是，`kill` 命令成功退出时其状态码为 0 ，其他状态则是非0。`kill -0` 则不会发送信号，但是会在进程不存在时返回一个不为 0 的状态码。请编写一个 bash 函数 `pidwait` ，它接受一个 pid 作为输入参数，然后一直等待直到该进程结束。您需要使用 `sleep` 来避免浪费 CPU 性能。
 
-```bash
-#!/bin/bash
+   ```bash
+   #!/bin/bash
 
-pidwait()
-{
-    while kill -0 $1
-    do
-    sleep 1
-    done
-    ls
-}
-```
+   pidwait()
+   {
+       while kill -0 $1
+       do
+       sleep 1
+       done
+       ls
+   }
+   ```
 
-这里 while 判断的是命令行的返回值而不是布尔值，这个和其他语言有所区别。返回值 0 表示成功所以能够进入循环，参考[这个问题](https://unix.stackexchange.com/questions/185793/why-is-it-while-kill-0-pid-and-not-until-kill-0-pid)
+   这里 while 判断的是命令行的返回值而不是布尔值，这个和其他语言有所区别。返回值 0 表示成功所以能够进入循环，参考[这个问题](https://unix.stackexchange.com/questions/185793/why-is-it-while-kill-0-pid-and-not-until-kill-0-pid)
 
-![answer](https://s1.imagehub.cc/images/2022/10/08/zFHxuDwdgy.png)
+   ![answer](https://s1.imagehub.cc/images/2022/10/08/zFHxuDwdgy.png)
 
-## 终端多路复用
+### 终端多路复用
 
 1. 请完成这个 [tmux 教程](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/) ，并参考[这些步骤](https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/)来学习如何自定义 tmux。
 
-很好的一个教程，只需要一点英语基础就能看懂。
+   很好的一个教程，只需要一点英语基础就能看懂。
 
-## 别名
+### 别名 - Alias
 
 1. 创建一个 `dc` 别名，它的功能是当我们错误的将 `cd` 输入为 `dc` 时也能正确执行。
 
-```bash
-alias dc=cd
-```
+   ```bash
+   alias dc=cd
+   ```
 
 2. 执行 `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` 来获取您最常用的十条命令，尝试为它们创建别名。注意：这个命令只在 Bash 中生效，如果您使用 ZSH，使用 `history 1` 替换 `history`。
 
-这里我的虚拟机是经常换来换去的，获取的数据不准确，可以依照个人习惯改别名。
+   这里我的虚拟机是经常换来换去的，获取的数据不准确，可以依照个人习惯改别名。
 
 ## 配置文件
 
@@ -520,76 +520,76 @@ alias dc=cd
 5. 将您现有的所有配置文件移动到项目仓库里。
 6. 将项目发布到GitHub。
 
-```bash
-mkdir ~/dotfiles
-git init ~/dotfiles
-```
+   ```bash
+   mkdir ~/dotfiles
+   git init ~/dotfiles
+   ```
 
-```bash
-#!/bin/bash
+   ```bash
+   #!/bin/bash
 
-files="bashrc vimrc "
+   files="bashrc vimrc "
 
-for file in $files; do
-    ln -s ~/dotfiles/$file ~/.$file
-done
-```
+   for file in $files; do
+       ln -s ~/dotfiles/$file ~/.$file
+   done
+   ```
 
-## 远端连接
+### 远端连接
 
 1. 前往 `~/.ssh/` 并查看是否已经存在 SSH 密钥对。如果不存在，请使用`ssh-keygen -o -a 100 -t ed25519`来创建一个。建议为密钥设置密码然后使用`ssh-agent`，更多信息可以参考 [这里](https://www.ssh.com/ssh/agent)；
 
-这里我本地电脑已经有密钥了，直接使用就行。
+   这里我本地电脑已经有密钥了，直接使用就行。
 
 2. 在.ssh/config加入下面内容：
 
-```bash
-Host vm
-    User username_goes_here
-    HostName ip_goes_here
-    IdentityFile ~/.ssh/id_ed25519
-    LocalForward 9999 localhost:8888
-```
+   ```bash
+   Host vm
+       User username_goes_here
+       HostName ip_goes_here
+       IdentityFile ~/.ssh/id_ed25519
+       LocalForward 9999 localhost:8888
+   ```
 
-这里添加我的虚拟机，ssh配置如下：
+   这里添加我的虚拟机，ssh配置如下：
 
-![config](https://s1.imagehub.cc/images/2022/10/09/bYWQQNrpa5.png)
+   ![config](https://s1.imagehub.cc/images/2022/10/09/bYWQQNrpa5.png)
 
 3. 使用 `ssh-copy-id vm` 将您的 ssh 密钥拷贝到服务器。
 
-本地电脑为Windows，无法使用`ssh-copy-id`，故不进行免密登录。
+   本地电脑为Windows，无法使用`ssh-copy-id`，故不进行免密登录。
 
 4. 使用`python -m http.server 8888` 在您的虚拟机中启动一个 Web 服务器并通过本机的`http://localhost:9999` 访问虚拟机上的 Web 服务器
 
-PS：这里用的是低版本的python，所以指令有所不同
+   PS：这里用的是低版本的python，所以指令有所不同
 
-![连接](https://s1.imagehub.cc/images/2022/10/09/J5qXFlQNTx.png)
+   ![连接](https://s1.imagehub.cc/images/2022/10/09/J5qXFlQNTx.png)
 
-![访问](https://s1.imagehub.cc/images/2022/10/09/N3XwFkIjpV.png)
+   ![访问](https://s1.imagehub.cc/images/2022/10/09/N3XwFkIjpV.png)
 
 5. 使用`sudo vim /etc/ssh/sshd_config` 编辑 SSH 服务器配置，通过修改`PasswordAuthentication`的值来禁用密码验证。通过修改`PermitRootLogin`的值来禁用 root 登录。然后使用`sudo service sshd restart`重启 ssh 服务器，然后重新尝试。
 
-这里本地Windows没有用免密验证，所以跳过此题。
+   这里本地Windows没有用免密验证，所以跳过此题。
 
 6. (附加题) 在虚拟机中安装 [mosh](https://mosh.org/) 并启动连接。然后断开服务器/虚拟机的网络适配器。`mosh`可以恢复连接吗？
 
-[使用 Mosh 来优化 SSH 连接](http://t.zoukankan.com/sunweiye-p-12003616.html)
+   [使用 Mosh 来优化 SSH 连接](http://t.zoukankan.com/sunweiye-p-12003616.html)
 
 7. (附加题) 查看 ssh 的`-N` 和 `-f` 选项的作用，找出在后台进行端口转发的命令是什么？
 
-```bash
--N      Do not execute a remote command.  This is useful for just forwarding ports.
+   ```bash
+   -N      Do not execute a remote command.  This is useful for just    forwarding ports.
 
--f      Requests ssh to go to background just before command execution.  This is useful if ssh is going to ask for passwords or passphrases, but the user wants it in the background.  This implies -n.  The recommended way to start X11 programs at a remote site is with something like ssh -f host xterm.
+   -f      Requests ssh to go to background just before command execution.  This is useful if ssh is going to ask for passwords or passphrases, but the user wants it in the background.  This implies -n.  The recommended way to start X11 programs at a remote site is with something like ssh -f host xterm.
 
-If the ExitOnForwardFailure configuration option is set to ``yes'', then a client started with -f will wait for all remote port forwards to be successfully established before placing itself in the background.
-```
+   If the ExitOnForwardFailure configuration option is set to ``yes'', then a client started with -f will wait for all remote port forwards to be successfully established before placing itself in the background.
+   ```
 
-- -N 就是不执行远端命令，适用于端口转发的情况
-- -f 是让 ssh 在执行命令前切换到后台运行
+   - -N 就是不执行远端命令，适用于端口转发的情况
+   - -f 是让 ssh 在执行命令前切换到后台运行
 
-后台进行端口转发的命令:
+   后台进行端口转发的命令:
 
-```bash
-ssh -fN -L 9999:localhost:8888 vm
-```
+   ```bash
+   ssh -fN -L 9999:localhost:8888 vm
+   ```
