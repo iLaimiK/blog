@@ -49,15 +49,15 @@ Linux的作者Linus是芬兰人，而芬兰的吉祥物就是一只可爱的企�
 
 ## Linux发展
 
-<font color=#3232CD><i>1991年10月5日</i></font>
+<font color=#3232CD><i>1991年10月5日</i></font><br />
 第一个版本0.0.2发布
 代码只有约10,000行
 
-<font color=#3232CD><i>1992年</i></font>
+<font color=#3232CD><i>1992年</i></font><br />
 Linux0.96拥有40,000行代码
 大约有1000人在使用，大部分是hacker
 
-<font color=#3232CD><i>1993年</i></font>
+<font color=#3232CD><i>1993年</i></font><br />
 Linux0.99发布
 大约100余名程序员参与内核代码编写/修改
 代码量约有10万行，用户约有2万

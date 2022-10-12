@@ -55,7 +55,7 @@ $_      #上一个命令的最后一个参数
 !!      #完整的上一个命令
 ```
 
-</details><br />
+</details>
 
 [Bash 变量](https://wangdoc.com/bash/variable.html)
 

@@ -10,16 +10,11 @@ cover: https://s1.imagehub.cc/images/2021/03/05/48507999_p0.jpg
 
 # 纯音音乐馆
 
-[【纯音音乐馆】【240+10P】它们不需要歌词,也可以打动你的心](https://www.bilibili.com/video/av3454517)  
+[【纯音音乐馆】【240+10P】它们不需要歌词,也可以打动你的心](https://www.bilibili.com/video/av3454517)   
+
 感谢音乐馆陪伴我度过高中、大学的学习时光，在此纪念。  
 希望其以后也能陪伴我走完人生的道路。  
 以及——勿忘初心，方得始终。  
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=49389984&height=430"></iframe>
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=47897219&height=430"></iframe>
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=144277359&height=430"></iframe>
 
 # Bilibili夏日绘版
 
@@ -159,7 +154,7 @@ Ugoira Test
 >
 >——[Steam评论](https://steamcommunity.com/profiles/76561199101194667/recommended/1093910/)
 
-相关链接：
+相关链接：  
 [听我讲一个故事，不要哭，要笑，好吗？——《黑森町绮谭》游戏后感。](https://zhuanlan.zhihu.com/p/109517299)  
 [如夏花邂逅白雪，泡沫冬景后的相遇——《黑森町绮谭》](https://zhuanlan.zhihu.com/p/339955034)  
 [泡沫时代下的妖、人、神——《黑森町绮谭》测评](https://zhuanlan.zhihu.com/p/91905934)  

@@ -10,7 +10,7 @@ tags:
 - 学习笔记
 ---
 
-:::danger no-icon
+```
 原神用户协议中的某些条款：
 
 如果您从未经米哈游合法授权的第三方获取米哈游游戏或与米哈游游戏名称相同及/或相似的游戏，将视为您未获得米哈游授权，米哈游无法保证该游戏能够正常使用，并对因此给您造成的损失不予负责。
@@ -27,11 +27,9 @@ tags:
 用户不得通过不正当的手段或其他不公平的手段使用米哈游游戏、米哈游游戏服务或参与米哈游游戏活动，除非中华人民共和国法律允许或米哈游事先书面许可，用户不得从事下列行为：
 （4）对游戏软件或者软件运行过程中释放到任何终端内存中的数据、软件运行过程中客户端与服务器端的交互数据，以及软件运行所必需的系统数据，进行复制、修改、增加、删除、挂接运行或创作任何衍生作品，形式包括但不限于使用插件、外挂或非经合法授权的第三方工具/服务接入软件和相关系统；
 （6）通过非米哈游开发、授权的第三方软件、插件、外挂、系统，使用米哈游游戏及米哈游游戏服务，或制作、发布、传播非米哈游开发、授权的第三方软件、插件、外挂、系统；
-:::
+```
 
-:::warning
-本文仅供学习或技术交流使用，禁止用于学习研究外的其他目的，请于研究后 24 小时内删除相关资源，此外任何原因导致的法律及版权纠纷均与本人无关，本人不承担连带责任。
-:::
+> 本文仅供学习或技术交流使用，禁止用于学习研究外的其他目的，请于研究后 24 小时内删除相关资源，此外任何原因导致的法律及版权纠纷均与本人无关，本人不承担连带责任。
 
 # 系统要求
 
@@ -64,7 +62,7 @@ git clone https://hub.fastgit.xyz/Grasscutters/Grasscutter.git
 # 请不要盲目复制上面的命令，因为镜像网站随时会失效，还请自行搜索替换，同时请不要登录任何github镜像网站
 ```
 
-Grasscutter 使用 Gradle 来处理依赖及编译：
+Grasscutter 使用 Gradle 来处理依赖及编译：  
 
 ```shell
 cd Grasscutter
@@ -74,47 +72,46 @@ cd Grasscutter
 
 ![编译](https://s1.imagehub.cc/images/2022/08/12/powershell_dll9u5zDg4.png)
 
-编译成功后会在当前目录中发现一个以`.jar`为后缀的服务端核心文件。
+编译成功后会在当前目录中发现一个以`.jar`为后缀的服务端核心文件。  
 
 # 服务端资源
 
-为方便后续操作及资源更新，将该`.jar`文件放到另一个目录中，在`jar`文件根目录中创建`resources`文件夹，并将[Resources](https://github.com/Koko-boya/Grasscutter_Resources)里的资源放到`resources`文件夹中。
-此外还需将[Keystore 文件](https://github.com/Grasscutters/Grasscutter/blob/development/keystore.p12)放到`jar`文件的根目录中。
+为方便后续操作及资源更新，将该`.jar`文件放到另一个目录中，在`jar`文件根目录中创建`resources`文件夹，并将[Resources](https://github.com/Koko-boya/Grasscutter_Resources)里的资源放到`resources`文件夹中。  
+此外还需将[Keystore 文件](https://github.com/Grasscutters/Grasscutter/blob/development/keystore.p12)放到`jar`文件的根目录中。  
 
 ![Server](https://s1.imagehub.cc/images/2022/08/12/TRkTh24DZH.png "Server目录")
 ![resources](https://s1.imagehub.cc/images/2022/08/12/u6EQwSS03y.png "\Server\resources目录")
-{.gallery data-height="220"}
 
-上述资源都是版本更新时需要**覆盖替换**的，`jar`从旧版本升级到新版本还需删除目录下的`config.json`（启动服务端后自动生成）。
+上述资源都是版本更新时需要**覆盖替换**的，`jar`从旧版本升级到新版本还需删除目录下的`config.json`（启动服务端后自动生成）。  
 
 # 运行服务端
 
-在`jar`根目录下打开`cmd`，输入以下命令：
+在`jar`根目录下打开`cmd`，输入以下命令：  
 
 ```shell
 java -jar grasscutter-1.2.3-dev.jar
 ```
 
-此命令为服务端启动命令，请结合实际`.jar`文件名称来输入。
+此命令为服务端启动命令，请结合实际`.jar`文件名称来输入。  
 
-运行成功应如下图所示：
+运行成功应如下图所示：  
 
-![启动Grasscutter](https://s1.imagehub.cc/images/2022/08/12/ry6G2bVTTl.png)
+![启动Grasscutter](https://s1.imagehub.cc/images/2022/08/12/ry6G2bVTTl.png)  
 
-PS：关闭服务端不可直接关闭该`cmd`窗口，需在该窗口内输入`stop`来关闭。如若不慎关闭了窗口，请在任务管理器中直接杀掉`Java`相关进程。
+PS：关闭服务端不可直接关闭该`cmd`窗口，需在该窗口内输入`stop`来关闭。如若不慎关闭了窗口，请在任务管理器中直接杀掉`Java`相关进程。  
 
 # 本地客户端连接
 
-在运行客户端之前，首先需要将客户端请求代理至本地服务器 (同理可代理至运行服务端的云服务器)。
-这里使用的是 mitmproxy 代理工具。
+在运行客户端之前，首先需要将客户端请求代理至本地服务器 (同理可代理至运行服务端的云服务器)。  
+这里使用的是 mitmproxy 代理工具。  
 
-在`grasscutter`的项目目录内有`proxy.py`和`proxy_config.py`文件，将其复制到`jar`文件的根目录中。
+在`grasscutter`的项目目录内有`proxy.py`和`proxy_config.py`文件，将其复制到`jar`文件的根目录中。  
 
-将证书文件（keystore.p12）导入到“受信任的根证书颁发机构”，双击文件后的一系列设置按默认选项，密码为123456，在证书存储中按下图设置，随后完成导入，在弹出的警告窗口选择“是”。
+将证书文件（keystore.p12）导入到“受信任的根证书颁发机构”，双击文件后的一系列设置按默认选项，密码为123456，在证书存储中按下图设置，随后完成导入，在弹出的警告窗口选择“是”。  
 
 ![证书存储](https://s1.imagehub.cc/images/2022/08/12/rundll32_qqCpzYSnoz.png)
 
-在目录下打开`cmd`输入命令运行`proxy.py`：
+在目录下打开`cmd`输入命令运行`proxy.py`：  
 
 ```shell
 mitmdump -s proxy.py --ssl-insecure --listen-port 54321
@@ -122,17 +119,17 @@ mitmdump -s proxy.py --ssl-insecure --listen-port 54321
 
 ![](https://s1.imagehub.cc/images/2022/08/12/pZkfYvCdAs.png)
 
-运行代理后，关闭现有的系统代理软件，前往系统网络设置，手动设置代理为`127.0.0.1:54321`。
+运行代理后，关闭现有的系统代理软件，前往系统网络设置，手动设置代理为`127.0.0.1:54321`。  
 
 ![代理](https://s1.imagehub.cc/images/2022/08/12/ApplicationFrameHost_AWgvLWwhUd.png)
 
-设置完成后，需要添加 mitmproxy 生成的证书才可以正常进行连接，使用浏览器访问 <http://mitm.it/>，下载对应平台的证书，并根据网页教程添加至 “受信任的根证书颁发机构” 即可。
+设置完成后，需要添加 mitmproxy 生成的证书才可以正常进行连接，使用浏览器访问 <http://mitm.it/>，下载对应平台的证书，并根据网页教程添加至 “受信任的根证书颁发机构” 即可。  
 
-PS：使用`Ctrl+c`即可退出 mitmdump 
+PS：使用`Ctrl+c`即可退出 mitmdump  
 
 # 进入游戏
 
-进入游戏前需要创建账号，在服务端的控制台下输入命令：
+进入游戏前需要创建账号，在服务端的控制台下输入命令：  
 
 ```shell
 account create [username] [uid]
@@ -140,13 +137,14 @@ account create [username] [uid]
 
 ![运行游戏](https://s1.imagehub.cc/images/2022/08/12/xNsLgI3PnM.png)
 
-然后找到本地客户端（原神游戏目录），进入`\Genshin Impact\Genshin Imapct Game`目录，运行`YuanShen.exe`。（不能通过官方启动器运行）
+然后找到本地客户端（原神游戏目录），进入`\Genshin Impact\Genshin Imapct Game`目录，运行`YuanShen.exe`。（不能通过官方启动器运行）  
 
-进入登录界面应显示为`Hoyoverse`，输入刚刚创建的账号用户名，并随便输入一个密码即可进入游戏。
+进入登录界面应显示为`Hoyoverse`，输入刚刚创建的账号用户名，并随便输入一个密码即可进入游戏。  
 
 ![登录界面](https://s1.imagehub.cc/images/2022/08/12/YuanShen_0qrG0PA7HT.png)
 
-+++info 登入后出现4214错误代码解决方案
+<details>
+<summary>登入后出现4214错误代码解决方案</summary>
 
 在进行下面操作时务必先备份一遍文件，以免操作不当或程序出现问题导致文件损坏或者丢失。
 
@@ -176,7 +174,7 @@ account create [username] [uid]
 换回官方提供的文件只需点击`Unpatch`即可。
 打完补丁后不用在启动器运行游戏，关闭启动器自己运行私服即可。
 关闭私服后请尽快打开启动器设置并`Unpatch`（如出现问题请将备份进行复制替换），以免因个人疏忽产生不良后果。
-+++
+</details>
 
 虽说进入游戏后即可关闭代理，但我不建议关闭代理，因为不知道米哈游还会在客户端做什么手脚。
 
@@ -193,11 +191,12 @@ account create [username] [uid]
 
 ![Handbook](https://s1.imagehub.cc/images/2022/08/12/qS1s24V2zl.png)
 
-+++info 快速查找私服指令工具
-见项目 [Grasscutter Tools](https://github.com/jie65535/GrasscutterCommandGenerator)，支持指令生成、卡池编辑等功能。
+<details>
+<summary>快速查找私服指令工具</summary>
+见项目 <a hetf="https://github.com/jie65535/GrasscutterCommandGenerator"> Grasscutter Tools </a>，支持指令生成、卡池编辑等功能。<br />
 
 网页版 Grasscutter Tools请点击[这里](https://wmn1525.github.io/grasscutterTools/dist/index.html#/)
-+++
+</details>
 
 ## 传送
 
@@ -209,13 +208,13 @@ account create [username] [uid]
 
 ## 结束游戏
 
-退出游戏后请及时关闭服务端和代理（proxy），并将网络设置里的代理关闭，把官方提供的原文件替换回去，以免出现不必要的问题。
+退出游戏后请及时关闭服务端和代理（proxy），并将网络设置里的代理关闭，把官方提供的原文件替换回去，以免出现不必要的问题。  
 
 # 其他
 
 ## 服务端配置文件释义
 
-带`?`的为不太清楚功能，仅为英文翻译。
+带`?`的为不太清楚功能，仅为英文翻译。  
 
 ```json config.json-v3
 {
@@ -391,7 +390,7 @@ account create [username] [uid]
 
 ## 卡池
 
-卡池配置文件为`.\data\Banners.json`，同样的我给一下注释，重复出现的不作二次注释。
+卡池配置文件为`.\data\Banners.json`，同样的我给一下注释，重复出现的不作二次注释。  
 
 ```json
 [
@@ -496,12 +495,12 @@ account create [username] [uid]
 ]
 ```
 
-新增卡池的话，只需增加`gachaType`为非文件中的值，且`scheduleId`的值不重复即可。注意客户端只识别以上四个`gachaType`值，添加的其他卡池不会显示类型。
-要修改卡池图片和标题的话，可以到[荼蘼云盘](https://pan.tomys.top/s/dkZCZ?password=blnuot)里找到`原神卡池顺序_V<version>_byTomyJan.xlsx`下载查看。随后修改对应参数项的值中的`A0**`为你想要的卡池ID。
+新增卡池的话，只需增加`gachaType`为非文件中的值，且`scheduleId`的值不重复即可。注意客户端只识别以上四个`gachaType`值，添加的其他卡池不会显示类型。  
+要修改卡池图片和标题的话，可以到[荼蘼云盘](https://pan.tomys.top/s/dkZCZ?password=blnuot)里找到`原神卡池顺序_V<version>_byTomyJan.xlsx`下载查看。随后修改对应参数项的值中的`A0**`为你想要的卡池ID。  
 
-下面是全物品卡池的参数：
+下面是全物品卡池的参数：  
 
-```json 由GrasscutterTools工具生成
+```json
 {
   "gachaType":888,
   "scheduleId":514,
@@ -533,9 +532,9 @@ account create [username] [uid]
 
 ## 数据库管理
 
-这里需要用到 MongoDB Campass
+这里需要用到 MongoDB Campass  
 
-下面的操作需要你在私服内拥有了人物，如没有人物，请进入游戏内输入指令获取。
+下面的操作需要你在私服内拥有了人物，如没有人物，请进入游戏内输入指令获取。  
 
 ### 修改角色等级/突破阶段/天赋
 
@@ -567,11 +566,11 @@ account create [username] [uid]
 
 6. 修改完毕后点击`REPLACE`即可完成编辑。
 
-最后重启服务端和客户端使修改后的数据库生效。
+最后重启服务端和客户端使修改后的数据库生效。  
 
 ### 修改武器/圣遗物
 
-重复操作不再赘述
+重复操作不再赘述  
 
 1. 连接后选择`Databases`>`grasscutter`>`items`
 
@@ -600,11 +599,11 @@ account create [username] [uid]
 
 4. 修改完毕后点击`REPLACE`即可完成编辑。
 
-最后重启服务端和客户端使修改后的数据库生效。
+最后重启服务端和客户端使修改后的数据库生效。  
 
 # 参考资料
 
-[原神私服 Grasscutter 搭建指南 - 2.7 更新](https://blog.dsrkafuu.net/post/2022/genshin-grasscutter/)
-[记录关于原神私服搭建的详细流程与心得](https://www.mryunqi.com/archives/102)
+[原神私服 Grasscutter 搭建指南 - 2.7 更新](https://blog.dsrkafuu.net/post/2022/genshin-grasscutter/)  
+[记录关于原神私服搭建的详细流程与心得](https://www.mryunqi.com/archives/102)  
 [GenshinTJ - 荼蘼博客](https://blog.tomys.top/2022-04/GenshinTJ/)
-[【原神】知名二次元游戏Grasscutter常见问题及Config.json配置文件以及服务端命令详解](https://7yog.cn/archives/204.html)
+[【原神】知名二次元游戏Grasscutter常见问题及Config.json配置文件以及服务端命令详解](https://7yog.cn/archives/204.html)  
