@@ -1,5 +1,6 @@
 @echo off
 git add -A
 git commit -m update
-git push -u origin master
+git pull origin master --allow-unrelated-histories
+git push -f origin master
 exit
