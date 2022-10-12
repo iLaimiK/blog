@@ -45,7 +45,7 @@ categories:
 平时注意搜集0day；  
 思路很重要。  
 
-参考网站：
+参考网站：  
 [渗透测试的8个步骤](https://www.freebuf.com/column/196291.html)  
 [【绿盟大讲堂】渗透测试流程解析](http://blog.nsfocus.net/penetration-test-class/)  
 [一次完整的渗透测试流程](https://blog.csdn.net/qq_36119192/article/details/84674109)  
