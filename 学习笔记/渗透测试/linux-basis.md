@@ -49,15 +49,15 @@ Linux的作者Linus是芬兰人，而芬兰的吉祥物就是一只可爱的企�
 
 ## Linux发展
 
-[1991年10月5日]{.label .info}
+<font color=#3232CD><i>1991年10月5日</i></font>
 第一个版本0.0.2发布
 代码只有约10,000行
 
-[1992年]{.label .info}
+<font color=#3232CD><i>1992年</i></font>
 Linux0.96拥有40,000行代码
 大约有1000人在使用，大部分是hacker
 
-[1993年]{.label .info}
+<font color=#3232CD><i>1993年</i></font>
 Linux0.99发布
 大约100余名程序员参与内核代码编写/修改
 代码量约有10万行，用户约有2万
@@ -231,35 +231,35 @@ proc 是 Processes(进程) 的缩写，/proc 是一种伪文件系统（也即�
 > In the original Unix implementations, /usr was where the home directories of the users were placed (that is to say, /usr/someone was then the directory now known as /home/someone). In current Unices, /usr is where user-land programs and data (as opposed to 'system land' programs and data) are. The name hasn't changed, but it's meaning has narrowed and lengthened from "everything user related" to "user usable programs and data". As such, some people may now refer to this directory as meaning 'User System Resources' and not 'user' as was originally intended. (链接：https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/usr.html)
 
 /var：
-全称Variable，意为“变量”。该目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下，包括各种日志文件。
+全称Variable，意为“变量”。该目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下，包括各种日志文件。  
 
 相关文章：
-[Linux /opt和/usr文件夹说明](https://www.cnblogs.com/larry2016/p/13977297.html)
-[Linux /proc目录详解](https://www.cnblogs.com/DswCnblog/p/5780389.html)
-[Linux中/bin与/sbin目录的作用及区别介绍](https://blog.csdn.net/lh2016rocky/article/details/70801030)
-[关于linux下/srv、/var和/tmp的职责区分](https://blog.csdn.net/u012107143/article/details/54972544)
-[Linux 内核/sys 文件系统介绍](https://blog.csdn.net/runner668/article/details/80685940)
-[linux中/usr的由来及内容](https://blog.csdn.net/menogen/article/details/12185685)
-[Linux中常见的英文缩写](https://www.zhihu.com/question/49073893/answer/114438355)
+[Linux /opt和/usr文件夹说明](https://www.cnblogs.com/larry2016/p/13977297.html)  
+[Linux /proc目录详解](https://www.cnblogs.com/DswCnblog/p/5780389.html)  
+[Linux中/bin与/sbin目录的作用及区别介绍](https://blog.csdn.net/lh2016rocky/article/details/70801030)  
+[关于linux下/srv、/var和/tmp的职责区分](https://blog.csdn.net/u012107143/article/details/54972544)  
+[Linux 内核/sys 文件系统介绍](https://blog.csdn.net/runner668/article/details/80685940)  
+[linux中/usr的由来及内容](https://blog.csdn.net/menogen/article/details/12185685)  
+[Linux中常见的英文缩写](https://www.zhihu.com/question/49073893/answer/114438355)  
 
 # Linux相关命令
 
-[Linux基础](https://blog.csdn.net/weixin_44440734/article/details/86564309)
-[Linux ls 命令](https://www.runoob.com/linux/linux-comm-ls.html)
-[Linux—vi命令详解](https://blog.csdn.net/cyl101816/article/details/82026678)
-[chmod命令详细用法](https://www.cnblogs.com/chengJAVA/p/4319420.html)
-[Linux rpm命令详解](https://www.cnblogs.com/ftl1012/p/rpm.html)
-[Linux yum 命令](https://www.runoob.com/linux/linux-yum.html)
-[Linux下源码编译安装的三个步骤](http://www.05bk.com/231.html)
-[Linux源码安装步骤(详细)](https://www.cnblogs.com/benwu/articles/8436209.html)
-[apt命令](https://www.cnblogs.com/Jimc/p/10297719.html)
-[dpkg命令](https://www.cnblogs.com/Jimc/p/10302347.html)
+[Linux基础](https://blog.csdn.net/weixin_44440734/article/details/86564309)  
+[Linux ls 命令](https://www.runoob.com/linux/linux-comm-ls.html)  
+[Linux—vi命令详解](https://blog.csdn.net/cyl101816/article/details/82026678)  
+[chmod命令详细用法](https://www.cnblogs.com/chengJAVA/p/4319420.html)  
+[Linux rpm命令详解](https://www.cnblogs.com/ftl1012/p/rpm.html)  
+[Linux yum 命令](https://www.runoob.com/linux/linux-yum.html)  
+[Linux下源码编译安装的三个步骤](http://www.05bk.com/231.html)  
+[Linux源码安装步骤(详细)](https://www.cnblogs.com/benwu/articles/8436209.html)  
+[apt命令](https://www.cnblogs.com/Jimc/p/10297719.html)  
+[dpkg命令](https://www.cnblogs.com/Jimc/p/10302347.html)  
 
 # 用Linux搭建Apache+MySQL+php网站（基于CentOS 7.0）
 
 1. 安装 httpd（Apache），php，mysql，php-mysql：
 
-```
+```bash
 yum -y install httpd php mysql php-mysql
 ```
 
@@ -267,45 +267,45 @@ yum -y install httpd php mysql php-mysql
 
 依次执行以下命令：
 
-```
+```bash
 wget http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm
 ```
 
-```
+```bash
 rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
 ```
 
-```
+```bash
 yum -y install mysql-server
 ```
 
 3. 启动httpd服务
 
-```
+```bash
 systemctl start httpd.service
 ```
 
 检查httpd服务启动情况
 
-```
+```bash
 ps -aux | grep httpd
 ```
 
 检查httpd服务状态
 
-```
+```bash
 systemctl status httpd.service
 ```
 
 4. 启动MySQL服务
 
-```
+```bash
 service mysqld start
 ```
 
 5. 设置MySQL数据库root账号密码并登录
 
-```
+```bash
 mysqladmin -uroot -password 123456
 mysql -uroot -p123456
 ```
@@ -315,7 +315,7 @@ mysql -uroot -p123456
 
 7. 清空防火墙
 
-```
+```bash
 iptables -F
 ```
 
@@ -325,7 +325,7 @@ iptables -F
 
 * 建议：将`/var/www`目录及其子目录下所有文件的拥有者改为apache，执行如下命令：
 
-```
+```bash
 chown -R apache /var/www
 ```
 
@@ -337,14 +337,14 @@ Apache是程序用户，访问网站时会用到。
 以上。
 
 相关文章：
-[Linux服务器上搭建Centos7.0+Apache+php+Mysql网站](https://www.cnblogs.com/skkip/p/9998112.html)
-[Linux服务器配置（详细版）](https://blog.csdn.net/weixin_44944193/article/details/102928254)
-[CenterOS7中解决No package mysql-server available.](https://www.cnblogs.com/heyongboke/p/11016561.html)
-[systemctl start xxxxx.service命令无法正常启动服务](https://blog.csdn.net/baidu_41847368/article/details/115130770)
-[SQL语法](https://www.runoob.com/sql/sql-intro.html)
-[mysql命令-use](https://www.cnblogs.com/hwaggLee/p/5010135.html)
-[iptables详解（1）：iptables概念](https://www.zsythink.net/archives/1199)
-[iptables入门指南](https://www.cnblogs.com/liang2580/articles/8400140.html)
-[iptables 执行清除命令 iptables -F 要非常小心](https://blog.csdn.net/dabao87/article/details/81064113)
-[Linux防火墙执行清除命令iptables -F说明](https://www.jingxialai.com/1535.html)
-[Linux chown 命令](https://www.runoob.com/linux/linux-comm-chown.html)
+[Linux服务器上搭建Centos7.0+Apache+php+Mysql网站](https://www.cnblogs.com/skkip/p/9998112.html)  
+[Linux服务器配置（详细版）](https://blog.csdn.net/weixin_44944193/article/details/102928254)  
+[CenterOS7中解决No package mysql-server available.](https://www.cnblogs.com/heyongboke/p/11016561.html)  
+[systemctl start xxxxx.service命令无法正常启动服务](https://blog.csdn.net/baidu_41847368/article/details/115130770)  
+[SQL语法](https://www.runoob.com/sql/sql-intro.html)  
+[mysql命令-use](https://www.cnblogs.com/hwaggLee/p/5010135.html)  
+[iptables详解（1）：iptables概念](https://www.zsythink.net/archives/1199)  
+[iptables入门指南](https://www.cnblogs.com/liang2580/articles/8400140.html)  
+[iptables 执行清除命令 iptables -F 要非常小心](https://blog.csdn.net/dabao87/article/details/81064113)  
+[Linux防火墙执行清除命令iptables -F说明](https://www.jingxialai.com/1535.html)  
+[Linux chown 命令](https://www.runoob.com/linux/linux-comm-chown.html)  

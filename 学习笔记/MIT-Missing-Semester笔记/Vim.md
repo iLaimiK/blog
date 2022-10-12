@@ -31,8 +31,8 @@ tags:
 
 ## 缓存，标签页，窗口
 
-> Vim 会维护一系列打开的文件，称为“缓存”。一个 Vim 会话包含一系列标签页，每个标签页包含一系列窗口（分隔面板）。每个窗口显示一个缓存。跟网页浏览器等其他你熟悉的程序不一样的是， 缓存和窗口不是一一对应的关系；窗口只是视角。一个缓存可以在多个窗口打开，甚至在同一个标签页内的多个窗口打开。这个功能其实很好用，比如在查看同一个文件的不同部分的时候。
-> Vim 默认打开一个标签页，这个标签也包含一个窗口。
+> Vim 会维护一系列打开的文件，称为“缓存”。一个 Vim 会话包含一系列标签页，每个标签页包含一系列窗口（分隔面板）。每个窗口显示一个缓存。跟网页浏览器等其他你熟悉的程序不一样的是， 缓存和窗口不是一一对应的关系；窗口只是视角。  一个缓存可以在多个窗口打开，甚至在同一个标签页内的多个窗口打开。这个功能其实很好用，比如在查看同一个文件的不同部分的时候。  
+> Vim 默认打开一个标签页，这个标签也包含一个窗口。  
 
 ## 命令行（command-line）
 
@@ -155,11 +155,8 @@ def main():
 
 - 主函数没有被调用
 - 从 0 而不是 1 开始
-
 - 在 5 的整数倍的时候打印 “fizz”
-
 - 在 15 的整数倍的时候在不同行打印 “fizz” 和 “buzz”
-
 - 采用硬编码的参数 10 而不是从命令控制行读取参数
 
 解决：
@@ -196,43 +193,38 @@ def main():
   - `/10`
   - `ci(` 更改括号内容为 “int(sys.argv[1])”
 
-展示详情请观看[课程视频](https://www.bilibili.com/video/BV1Dy4y1a7BW)。比较上面用 Vim 的操作和你可能使用其他程序的操作。 值得一提的是 Vim 需要很少的键盘操作，允许你编辑的速度跟上你思维的速度。
+展示详情请观看[课程视频](https://www.bilibili.com/video/BV1Dy4y1a7BW)。比较上面用 Vim 的操作和你可能使用其他程序的操作。值得一提的是 Vim 需要很少的键盘操作，允许你编辑的速度跟上你思维的速度。
 
 # 自定义 Vim
 
 Vim 由一个位于 `~/.vimrc` 的文本配置文件（包含 Vim 脚本命令）。 你可能会启用很多基本 设置。
 
-我们提供一个文档详细的基本设置，你可以用它当作你的初始设置。我们推荐使用这个设置因为 它修复了一些 Vim 默认设置奇怪行为。 在[这儿](https://missing-semester-cn.github.io/2020/files/vimrc)下载我们的设置，然后将它保存成 ~/.vimrc.
+我们提供一个文档详细的基本设置，你可以用它当作你的初始设置。我们推荐使用这个设置因为 它修复了一些 Vim 默认设置奇怪行为。在[这儿](https://missing-semester-cn.github.io/2020/files/vimrc)下载我们的设置，然后将它保存成 ~/.vimrc.  
 
-Vim 能够被重度自定义，花时间探索自定义选项是值得的。你可以参考其他人的在GitHub 上共享的设置文件，比如，课程讲师们的 Vim 设置 ([Anish](https://github.com/anishathalye/dotfiles/blob/master/vimrc), [Jon](https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim) (uses [neovim](https://neovim.io/)), [Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc))。 有很多好的博客文章也聊到了这个话题。尽量不要复制粘贴别人的整个设置文件，而是阅读和理解它，然后采用对你有用的部分。
+Vim 能够被重度自定义，花时间探索自定义选项是值得的。你可以参考其他人的在GitHub 上共享的设置文件，比如，课程讲师们的 Vim 设置 ([Anish](https://github.com/anishathalye/dotfiles/blob/master/vimrc), [Jon](https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim) (uses [neovim](https://neovim.io/)), [Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc))。 有很多好的博客文章也聊到了这个话题。尽量不要复制粘贴别人的整个设置文件，而是阅读和理解它，然后采用对你有用的部分。  
 
 # 扩展 Vim
 
-Vim 有很多扩展插件。跟很多互联网上已经过时的建议相反，你不需要在 Vim 使用一个插件管理器（从 Vim 8.0 开始）。你可以使用内置的插件管理系统。只需要创建一个 ~/.vim/pack/vendor/start/ 的文件夹，然后把插件放到这里（比如通过 git clone）。
+Vim 有很多扩展插件。跟很多互联网上已经过时的建议相反，你不需要在 Vim 使用一个插件管理器（从 Vim 8.0 开始）。你可以使用内置的插件管理系统。只需要创建一个 ~/.vim/pack/vendor/start/ 的文件夹，然后把插件放到这里（比如通过 git clone）。  
 
-以下是一些我们最爱的插件：
+以下是一些我们最爱的插件：  
 
-- [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): 模糊文件查找
-- [ack.vim](https://github.com/mileszs/ack.vim): 代码搜索
-- [nerdtree](https://github.com/preservim/nerdtree): 文件浏览器
-- [vim-easymotion](https://github.com/easymotion/vim-easymotion): 魔术操作
+- [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): 模糊文件查找  
+- [ack.vim](https://github.com/mileszs/ack.vim): 代码搜索  
+- [nerdtree](https://github.com/preservim/nerdtree): 文件浏览器  
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion): 魔术操作  
 
-我们尽量避免在这里提供一份冗长的插件列表。你可以查看讲师们的开源的配置文件 ([Anish](https://github.com/anishathalye/dotfiles), [Jon](https://github.com/jonhoo/configs), [Jose](https://github.com/JJGO/dotfiles)) 来看看我们使用的其他插件。 浏览 [Vim Awesome](https://vimawesome.com/) 来了解一些很棒的插件。 这个话题也有很多博客文章：搜索 “best Vim plugins”。
+我们尽量避免在这里提供一份冗长的插件列表。你可以查看讲师们的开源的配置文件 ([Anish](https://github.com/anishathalye/dotfiles), [Jon](https://github.com/jonhoo/configs), [Jose](https://github.com/JJGO/dotfiles)) 来看看我们使用的其他插件。 浏览 [Vim Awesome](https://vimawesome.com/) 来了解一些很棒的插件。 这个话题也有很多博客文章：搜索 “best Vim plugins”。  
 
 # Vim 进阶
 
 ## 宏
 
 - `q{字符}` 来开始在寄存器`{字符}`中录制宏
-- 
 - `q`停止录制
-- 
 - `@{字符}` 重放宏
-- 
 - 宏的执行遇错误会停止
-- 
 - `{计数}@{字符}`执行一个宏{计数}次
-- 
 - 宏可以递归
   - 首先用`q{字符}q`清除宏
   - 录制该宏，用 `@{字符}` 来递归调用该宏 （在录制完成之前不会有任何操作）
@@ -292,7 +284,7 @@ $ curl -O https://missing-semester-cn.github.io/2020/files/example-data.xml
 $ vim example-data.xml
 ```
 
-操作：
+操作：  
 - `Gdd`, `ggdd` 删除第一行和最后一行
 
 这里`<ESC>`表示按下`Esc`键，空格和逗号不表示分隔，有什么就输入什么。

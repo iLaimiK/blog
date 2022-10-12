@@ -27,11 +27,11 @@
     - [大学](须臾/2022/college-education.md)
 - 学习笔记
   - MIT Missing Semester 笔记
-    - [Course Overview And The Shell](学习笔记/MIT Missing Semester 笔记/Course-Overview-and-The-Shell.md)
-    - [Shell Tools And Scripting](学习笔记/MIT Missing Semester 笔记/Shell-Tools-and-Scripting.md)
-    - [Vim](学习笔记/MIT Missing Semester 笔记/Vim.md)
-    - [Data Wrangling](学习笔记/MIT Missing Semester 笔记/Data-Wrangling.md)
-    - [Command Line Environment](学习笔记/MIT Missing Semester 笔记/Command-line-Environment.md)
+    - [Course Overview And The Shell](学习笔记/MIT-Missing-Semester笔记/Course-Overview-and-The-Shell.md)
+    - [Shell Tools And Scripting](学习笔记/MIT-Missing-Semester笔记/Shell-Tools-and-Scripting.md)
+    - [Vim](MIT-Missing-Semester笔记/Vim.md)
+    - [Data Wrangling](学习笔记/MIT-Missing-Semester笔记/Data-Wrangling.md)
+    - [Command Line Environment](学习笔记/MIT-Missing-Semester笔记/Command-line-Environment.md)
   - 渗透测试
     - [Hacker的部分专业术语](学习笔记/渗透测试/term.md)
     - [渗透测试流程](学习笔记/渗透测试/penetration-test-process.md)
