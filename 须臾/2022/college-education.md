@@ -8,7 +8,7 @@ categories:
 - [知识之海]
 ---
 
-# 观点
+## 观点
 
 <details>
 <summary>偏激进的观点</summary>
@@ -47,7 +47,7 @@ categories:
 这就是大多数人的常态。<br />
 </details>
 
-# 可悲可叹的教育体系
+## 可悲可叹的教育体系
 
 [《上海交通大学生存手册》](https://survivesjtu.gitbook.io/survivesjtumanual/)  
 [有没有人觉得现在的大学教育是畸形的？——天涯论坛](http://bbs.tianya.cn/post-free-1549786-1.shtml)  
