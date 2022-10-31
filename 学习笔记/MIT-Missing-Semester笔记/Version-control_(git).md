@@ -287,7 +287,7 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
 
       ![graph](https://s1.imagehub.cc/images/2022/10/31/9AuFJtIonp.png)
 
-   2. 是谁最后修改了 `README.md` 文件？（提示：使用 `git log` 命令并添加合适的参数）   
+   2. 是谁最后修改了 `README.md` 文件？（提示：使用 `git log` 命令并添加合适的参数）  
 
       ```bash
       git log README.md
@@ -350,5 +350,5 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
 
 7. 克隆 本课程网站的仓库，找找有没有错别字或其他可以改进的地方，在 GitHub 上发起拉取请求（Pull Request）；  
 
-   首先 fork 本网站仓库，然后克隆 fork 后的仓库，在本地进行修改后，提交到 fork 后的仓库，然后[发起 PR](https://github.com/missing-semester/missing-semester/pulls)
+   首先 fork 本网站仓库，然后克隆 fork 后的仓库，在本地进行修改后，提交到 fork 后的仓库，然后[发起 PR](https://github.com/missing-semester/missing-semester/pulls)  
    ![pr](https://missing-semester-cn.github.io/missing-notes-and-solutions/2020/solutions/images/6/12.png)
