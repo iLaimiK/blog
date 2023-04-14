@@ -32,11 +32,11 @@
     - [Data Wrangling](学习笔记/MIT-Missing-Semester笔记/Data-Wrangling.md)
     - [Command Line Environment](学习笔记/MIT-Missing-Semester笔记/Command-line-Environment.md)
     - [Version Control (Git)](学习笔记/MIT-Missing-Semester笔记/Version-control_(git).md)
+    - [Debugging and Profiling](学习笔记/MIT-Missing-Semester笔记/Debugging-and-Profiling.md)
   - 渗透测试
     - [Hacker的部分专业术语](学习笔记/渗透测试/term.md)
     - [渗透测试流程](学习笔记/渗透测试/penetration-test-process.md)
     - [Windows基础知识](学习笔记/渗透测试/windows-basics.md)
     - [Linux基础知识](学习笔记/渗透测试/linux-basis.md)
-  - 未分类
-    - [原神私服搭建流程记录](学习笔记/未分类/Genshin-Private-Server.md)
-    - [对某手游的拆包记录](学习笔记/未分类/gfl2ddecrypt.md)
+  - 软件逆向
+    - [对某手游的拆包记录](学习笔记/软件逆向/gfl2ddecrypt.md)

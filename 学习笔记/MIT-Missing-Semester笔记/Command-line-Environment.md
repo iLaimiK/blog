@@ -453,9 +453,27 @@ Host *.mit.edu
 
 1. 我们可以使用类似`ps aux | grep`这样的命令来获取任务的 pid ，然后您可以基于pid 来结束这些进程。但我们其实有更好的方法来做这件事。在终端中执行 `sleep 10000` 这个任务。然后用 `Ctrl+z` 将其切换到后台并使用 `bg` 来继续允许它。现在，使用 [pgrep](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 来查找 pid 并使用 [pkill](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 结束进程而不需要手动输入pid。(提示：: 使用 `-af` 标记)。
 
-   ![answer](https://s1.imagehub.cc/images/2022/10/08/kEKXarq814.png)
+   ```bash
+   sleep 10000
+   Ctrl-Z
+   bg
+   ```
 
-   PS: 这里虚拟机表示`-a`为无效选项，查看帮助后发现没有`-a`选项，所以只用了`-f`。
+   ```bash
+   pgrep sleep #列出包含关键字 sleep 的进程的 pid
+   >
+   # 76560
+   # 81186
+   # 81292
+   ```
+
+   ```bash
+   pgrep sleep 10000 #列出包含关键字 sleep 的进程的 pid
+   >
+   # 76560
+   # 81186
+   # 81292
+   ```
 
    ```bash
    -a  Include process ancestors in the match list. By default, the current pgrep or pkill process and all of its ancestors are excluded (unless -v is used).
@@ -463,6 +481,10 @@ Host *.mit.edu
 
    -f  Match against full argument lists. The default is to match against process names.
    匹配所有参数列表。默认只匹配进程名称。
+   ```
+
+   ```bash
+   pkill  -af sleep
    ```
 
 2. 如果您希望某个进程结束后再开始另外一个进程， 应该如何实现呢？在这个练习中，我们使用 `sleep 60 &` 作为先执行的程序。一种方法是使用 [wait](http://man7.org/linux/man-pages/man1/wait.1p.html) 命令。尝试启动这个休眠命令，然后待其结束后再执行 `ls` 命令。
@@ -489,7 +511,14 @@ Host *.mit.edu
 
    这里 while 判断的是命令行的返回值而不是布尔值，这个和其他语言有所区别。返回值 0 表示成功所以能够进入循环，参考[这个问题](https://unix.stackexchange.com/questions/185793/why-is-it-while-kill-0-pid-and-not-until-kill-0-pid)
 
-   ![answer](https://s1.imagehub.cc/images/2022/10/08/zFHxuDwdgy.png)
+   ```bash
+   sleep 60 & pidwait $(pgrep sleep 60)
+   [1] 554
+   [1]  + 554 done       sleep 60
+   pidwait:kill:2: kill 554 failed: no such process
+   buggy.sh     debug_for.sh html_root    out.log
+   debug.sh     html.zip     marco.sh
+   ```
 
 ### 终端多路复用
 
@@ -553,7 +582,7 @@ Host *.mit.edu
 
    这里添加我的虚拟机，ssh配置如下：
 
-   ![config](https://s1.imagehub.cc/images/2022/10/09/bYWQQNrpa5.png)
+   > 图床炸了，请移步官方参考答案  
 
 3. 使用 `ssh-copy-id vm` 将您的 ssh 密钥拷贝到服务器。
 
@@ -563,9 +592,7 @@ Host *.mit.edu
 
    PS：这里用的是低版本的python，所以指令有所不同
 
-   ![连接](https://s1.imagehub.cc/images/2022/10/09/J5qXFlQNTx.png)
-
-   ![访问](https://s1.imagehub.cc/images/2022/10/09/N3XwFkIjpV.png)
+   > 图床炸了，请移步官方参考答案  
 
 5. 使用`sudo vim /etc/ssh/sshd_config` 编辑 SSH 服务器配置，通过修改`PasswordAuthentication`的值来禁用密码验证。通过修改`PermitRootLogin`的值来禁用 root 登录。然后使用`sudo service sshd restart`重启 ssh 服务器，然后重新尝试。
 

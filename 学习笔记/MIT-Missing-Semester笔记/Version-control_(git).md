@@ -285,7 +285,7 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
       git log --all --graph --decorate
       ```
 
-      ![graph](https://s1.imagehub.cc/images/2022/10/31/9AuFJtIonp.png)
+      > 图床炸了，请移步官方参考答案  
 
    2. 是谁最后修改了 `README.md` 文件？（提示：使用 `git log` 命令并添加合适的参数）  
 
@@ -293,7 +293,7 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
       git log README.md
       ```
 
-      ![README](https://s1.imagehub.cc/images/2022/10/31/uIA5RoqBwY.png)
+      > 图床炸了，请移步官方参考答案  
 
    3. 最后一次修改`_config.yml` 文件中 `collections:` 行时的提交信息是什么？（提示：使用 `git blame` 和 `git show`）  
 
@@ -301,7 +301,7 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
       git blame _config.yml | grep collections
       ```
 
-      ![show](https://s1.imagehub.cc/images/2022/10/31/ZAAYWNOrQa.png)
+      > 图床炸了，请移步官方参考答案  
 
 3. 使用 Git 时的一个常见错误是提交本不应该由 Git 管理的大文件，或是将含有敏感信息的文件提交给 Git 。尝试向仓库中添加一个文件并添加提交信息，然后将其从历史中删除 ([这篇文章也许会有帮助](https://help.github.com/articles/removing-sensitive-data-from-a-repository/))；  
 
@@ -314,7 +314,7 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
    git log
    ```
 
-   ![log](https://s1.imagehub.cc/images/2022/10/31/JnI9HOSSpF.png)  
+   > 图床炸了，请移步官方参考答案  
 
    然后使用`git filter-branch`清除提交记录：  
 
@@ -324,14 +324,11 @@ git restore    //git2.32版本后取代git reset 进行许多撤销操作
 
    文件和提交记录均已删除：  
 
-   ![file](https://s1.imagehub.cc/images/2022/10/31/C5mt09LP5n.png)  
-   ![commit](https://s1.imagehub.cc/images/2022/10/31/uy76fgjIbY.png)  
+   > 图床炸了，请移步官方参考答案  
 
 4. 从 GitHub 上克隆某个仓库，修改一些文件。当您使用 `git stash` 会发生什么？当您执行 `git log --all --oneline` 时会显示什么？通过 `git stash pop` 命令来撤销 `git stash` 操作，什么时候会用到这一技巧？  
 
-   ![stash](https://s1.imagehub.cc/images/2022/10/31/fpWDLoK3jM.png)  
-   ![log](https://s1.imagehub.cc/images/2022/10/31/GocBUoywow.png)  
-   ![stash pop](https://s1.imagehub.cc/images/2022/10/31/RvpEYkwZqa.png)  
+   > 图床炸了，请移步官方参考答案  
 
    [git stash 命令实用指南](https://zhuanlan.zhihu.com/p/364339115)  
 

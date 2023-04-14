@@ -21,14 +21,14 @@ cover: https://s1.imagehub.cc/images/2021/03/05/48507999_p0.jpg
 *2017年8月1日-2017年8月10日*  
 Bilibili夏日绘版活动第一期  
 
-![22的作业](https://s1.imagehub.cc/images/2021/03/05/7cc0d217b08a154d1b7baebdc69cc271.png "22的作业")
+![22的作业](https://view.moezx.cc/images/2022/12/05/d7eaa2e340c3089a1c5d0cad0ee7c682.png "22的作业")
 
 *2017年8月11日-2017年8月31日*  
 Bilibili夏日绘版活动第二期  
 
-![二期完美图一改](https://s1.imagehub.cc/images/2021/03/05/8dfde64babf21c485dec20707f135c1a.png "第二期完美图一改")
+![二期完美图一改](https://view.moezx.cc/images/2022/12/05/ca44ec26ef66156f81c28cd2bf4627bc.png "第二期完美图一改")
 
-![二期完美图二改](https://s1.imagehub.cc/images/2021/03/05/79afe8b47c6cc839e4a29ac611d7b844.png "第二期完美图二改")
+![二期完美图二改](https://view.moezx.cc/images/2022/12/05/ac7e38ad32cb68d981819cec85bde8fa.png "第二期完美图二改")
 
 > 这里引用一下引用萌娘百科相关条目的某个评价:  
 > Bilibili夏日大片独家播放  
@@ -51,28 +51,9 @@ Bilibili夏日绘版活动第二期
 好多年前的玩意了，做得十分精良，可惜原作者再没有更新了。  
 每个Gif都有近200张的图片，敬佩敬佩！  
 
-Ugoira Test  
-![うごイラ てすと](https://s1.imagehub.cc/images/2021/03/05/44306136.gif "うごイラ てすと")
+> 因为图床炸了，这里不放gif图片了，请到p站作者处观看吧~  
 
-诹访大战游戏  
-![【うごイラ】諏訪大戦ごっこ](https://s1.imagehub.cc/images/2021/03/05/44351705.gif "【うごイラ】諏訪大戦ごっこ")
-
-妖夢VS芳香  
-![【うごイラ】妖夢VS芳香](https://s1.imagehub.cc/images/2021/03/05/44517524.gif "【うごイラ】妖夢VS芳香")
-
-妖梦VS青娥&芳香（上续）  
-![ようむvsせいよし（前半）](https://s1.imagehub.cc/images/2021/03/05/45346377.gif "ようむvsせいよし（前半）")
-
-妖梦VS青娥&芳香（终）  
-![ようむvsせいよし（後半）](https://s1.imagehub.cc/images/2021/03/05/46345706.gif "ようむvsせいよし（後半）")
-
-[GIF Anime]羽立（はたて）vs文  
-![【GIFアニメ】はたてvs文](https://s1.imagehub.cc/images/2021/03/05/49389268.gif "【GIFアニメ】はたてvs文")
-
-突击！针妙丸~  
-![とつげき針妙丸](https://s1.imagehub.cc/images/2021/03/05/55901646.gif "とつげき針妙丸")
-
-顺便po上原作者的Pixiv：  
+po上原作者的Pixiv：  
 [Ah-Negitorow](https://www.pixiv.net/users/2862882)
 
 ## 黑森町绮谭
