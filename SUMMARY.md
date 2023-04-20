@@ -2,6 +2,8 @@
 
 - [README](README.md)
 - 学习笔记
+  - 计算机基础
+    - [逻辑门与二进制](学习笔记/计算机基础/logic-gates-and-binary.md)
   - MIT Missing Semester 笔记
     - [Course Overview And The Shell](学习笔记/MIT-Missing-Semester笔记/Course-Overview-and-The-Shell.md)
     - [Shell Tools And Scripting](学习笔记/MIT-Missing-Semester笔记/Shell-Tools-and-Scripting.md)
